@@ -176,7 +176,7 @@ The project will progress through four distinct checkpoints, with tasks distribu
 This project will be undertaken by a four-person team, leveraging individual strengths to cover all necessary aspects of development, research, and evaluation.
 
 
-- **You (Project Lead / UX Designer / Domain Expert):**
+- **Project Lead / UX Designer / Domain Expert:**
     - **Project Vision & Direction:** Sets the overall creative vision, project goals, and ensures the tool's musical relevance and quality.
     - **User Experience (UX) & Design:** Leads the design of the user interface, interaction flows, and critical control parameters (e.g., adjustable difficulty, stylistic options).
     - **Domain Expertise:** Provides essential musical insight for evaluating generated content, ensuring musicality and practical applicability for chamber groups and beginners.
