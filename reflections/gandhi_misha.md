@@ -1,4 +1,4 @@
-# Reflection: Literature Review Summaries (Dulf Vincent Genis)
+# Reflection: Literature Review Summaries 
 
 ---
 
