@@ -123,3 +123,37 @@ This proposal was created with the assistance of Perplexity Browser Assistant (S
 - https://aimusic.so/blog-unleashing-the-power-of-music-ai-a-headtohead-comparison-of-magenta-studio-and-pilot-plugins-43088 "A Head-to-Head Comparison of Magenta Studio and Pilot Plugins, 2024"
 - https://www.rareformaudio.com/blog/suno-ai-ceo-comments-backlash "Suno AI CEO Sparks Controversy with Comments on Music Creation, 2025"
 - https://alliedglobalmarketing.com/knowledge/pages/the-dilemma-of-aigenerated-music "The Dilemma of AI-Generated Music - Allied Global Marketing, 2024"
+
+
+
+Initial risks & mitigation (privacy, bias, safety, reliability)
+
+--Privacy
+
+Risk: User data may expose sensitive or personal work
+
+Mitigation: Strict opt-in policies for data sharing should be in place. Explicit consent is needed for these user submissions and generated content. 
+
+--Bias
+
+Risk: Data is skewed towards one demographic and limit inclusivity. 
+
+Mitigation: Input diverse and ethically sourced datasets and provide user-configurable style control to balance representation. 
+
+--Safety and Reliability
+
+Risk: Uneditable, unreliable or unuseable sources. 
+
+Mitigation: The need for user controls (e.g., note density, polyphony) will help tailor safe and realistic parts. Interpretable architecture will ensure outputs remain harmonic.
+
+
+
+
+
+
+
+
+
+
+Methods – Responsible AI Use Statement
+I used OpenAi Chat GPT on September 19, 2025 to synthesize and paraphrase information. This includes generating ideas and finding more information on our topic. All AI generated content was critically reviewed and edited for quality assurance by a human author.
