@@ -6,47 +6,65 @@ Chamber music ensembles often face a significant hurdle when wanting to perform 
 
 ---
 
-## Existing Tools and Their Problems
+## Your Proposed Approach and Why It Will Improve on Prior Art
 
-### Multi-Track Music Machine (MMM)
-- **What it does:** MMM uses AI to make music for several instruments at the same time, starting from a melody and adding harmonies.
-- **Problems:**
-  - Only a few controls, so you can’t really shape the music the way you want.
-  - The results often feel random or don’t match what the user is hoping for.
-  - It’s hard to use for specific group needs or styles.
-  - Audio quality is subpar and requires heavy computation use, thus making it less efficient for music generation.
+This project proposes building an AI-powered assistant tailored specifically for chamber music ensembles, capable of analyzing a single melodic line, such as a solo violin part, and generating musically sound, harmonized parts for complementary instruments including viola, cello, and second violin.
 
-### Magenta Studio
-- **What it does:** Magenta Studio is a set of AI tools that work inside music programs like Ableton Live. It helps create new melodies, chords, and drum parts.
-- **Problems:**
-  - Very limited controls, making it tough to change details in the music.
-  - The music often sounds robotic or doesn’t have much emotion.
-  - It’s not designed for making special arrangements for your own group.
-  - Crashes and freezes while loading or saving projects in Magenta Studio.
+### Key improvements over prior work include:
 
-### Suno
-- **What it does:** Suno is an AI that can make full songs from just a text description, handling music and sometimes lyrics in different languages.
-- **Problems:**
-  - Music often sounds generic or lacks a truly human touch.
-  - The output is hard to separate or edit for use by real musicians in a group.
-  - There are copyright and fairness concerns because of how Suno uses existing music data.
-  - Can be used to generate inappropriate and harmful content.
+#### Structured, interpretable generative models
+Inspired by research like Google’s Chamber Ensemble Generator (CEG), our approach will use transformer-based architectures combined with modular structured models to generate coherent, expressive multi-instrument scores. Unlike many black-box models, structured generative systems allow interpretability and controllability, ensuring realistic harmonization and facilitating debugging and refinement.
+
+#### Fine-grained user controls
+Our tool will provide adjustable parameters such as instrument selection, difficulty level, note density, polyphony, and stylistic nuances. This contrasts with many existing “1-parameter” AI music tools whose limited controls produce outputs that lack expressiveness or don’t match user needs.
+
+#### Output flexibility
+The AI will export generated parts in symbolic formats compatible with notation software and DAWs (e.g., MIDI, MusicXML), supporting rehearsal and performance workflows. This enables direct use by musicians without technical barriers common to audio-only AI outputs.
+
+#### Ethical and inclusive data use
+By leveraging datasets like CocoChorales and applying copyright-safe training techniques (e.g., HARMONYCLOAK), the system will respect intellectual property boundaries while ensuring stylistic variety and inclusivity.
+
+These innovations address core limitations of prior methods by enhancing expressiveness, controllability, practical integration, and ethical compliance, making the tool truly useful for chamber ensembles across skill levels.
 
 ---
 
-## What’s Missing from Current Tools
+## Plan for Checkpoint 2 Validation via Prompting
 
-1. **Not Enough User Control:** Most tools don’t let you pick the instruments, style, or how hard the music is, so it’s difficult to get exactly what you want.
-2. **Music Lacks Feeling:** AI-generated music often doesn’t sound expressive or emotional, which makes it less enjoyable to play or listen to.
-3. **Hard to Use for Groups:** It’s difficult to break up the music into parts or make it editable for group rehearsals or performances.
-4. **Too Many Choices, Not Enough Help:** Beginners can get overwhelmed by all the options, but there’s no clear way to choose what’s best.
-5. **Legal and Ownership Issues:** It’s unclear who owns music created by AI, especially when the AI is trained on copyrighted songs.
+To validate the proposed concept and deepen understanding of gaps in existing AI music tools, a systematic prompt-based evaluation will be conducted using ≥3 state-of-the-art platforms, potentially including Google Magenta Studio, Suno AI, and AIVA.
+
+### Key validation steps:
+
+#### Scenario design
+Develop prompt scenarios representing typical (standard melody harmonization), edge (complex or sparse melodies, unusual instrument combos), and failure cases (incomplete inputs, contradictory parameters) to comprehensively test tool robustness and usability.
+
+#### Structured prompting
+Issue carefully crafted prompts requesting multi-instrument part generation with control parameters (e.g., difficulty, instrumentation). Record tool responses, output formats, generation time, and user interface interactions.
+
+#### Data collection
+Collect sanitized transcripts, MIDI/audio outputs, error messages, and metadata organized by tool and scenario in a `/validation/` folder.
+
+#### Quantitative and qualitative analysis
+Assess accuracy of harmonization, output reliability, latency, ease of use, output export options, and platform-related issues like cost or content safety filters.
+
+#### Gap identification
+Summarize where existing tools fail to meet chamber ensemble needs regarding control granularity, expressiveness, output usability, or ethical safeguards.
+
+#### Opportunity framing
+Detail precise product requirements that address identified gaps, guiding technical development and user experience design.
+
+#### Concept refinement
+Create a design specification (`DESIGN_SPEC.md`) detailing user journeys, interactions, and control schemas based on validation insights. Develop a lightweight interactive prototype (e.g., Figma or HTML slides) for stakeholder demonstration and feedback.
+
+#### Feedback synthesis
+Incorporate peer/expert heuristic review to capture constructive critique and iterate the concept in preparation for the working prototype phase at Checkpoint 3.
+
+This structured prompting validation ensures the project’s design is evidence-based, user-driven, and targeted to fill unmet needs in AI-assisted chamber music creation.
 
 ---
 
 ## Methods – Responsible AI Use Statement
 
-I used Perplexity Browser Assitant recent model (Perplexity Sonar) on September 18, 2025 to synthesize and paraphrase information to generate a proposal for our project idea. This includes summarizing the problem statement, features, and tools. All AI generated content was critically reviewed and edited for quality assurance by a human author. 
+I used Perplexity Browser Assistant recent model (Perplexity Sonar) on September 18, 2025 to synthesize and paraphrase information to generate a proposal for our project idea. This includes summarizing the problem statement, features, and tools. All AI generated content was critically reviewed and edited for quality assurance by a human author. 
 
 ### Exact Prompts Used
 
