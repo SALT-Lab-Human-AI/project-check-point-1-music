@@ -126,34 +126,3 @@ This proposal was created with the assistance of Perplexity Browser Assistant (S
 
 
 
-Initial risks & mitigation (privacy, bias, safety, reliability)
-
---Privacy
-
-Risk: User data may expose sensitive or personal work
-
-Mitigation: Strict opt-in policies for data sharing should be in place. Explicit consent is needed for these user submissions and generated content. 
-
---Bias
-
-Risk: Data is skewed towards one demographic and limit inclusivity. 
-
-Mitigation: Input diverse and ethically sourced datasets and provide user-configurable style control to balance representation. 
-
---Safety and Reliability
-
-Risk: Uneditable, unreliable or unuseable sources. 
-
-Mitigation: The need for user controls (e.g., note density, polyphony) will help tailor safe and realistic parts. Interpretable architecture will ensure outputs remain harmonic.
-
-
-
-
-
-
-
-
-
-
-Methods – Responsible AI Use Statement
-I used OpenAi Chat GPT on September 19, 2025 to synthesize and paraphrase information. This includes generating ideas and finding more information on our topic. All AI generated content was critically reviewed and edited for quality assurance by a human author.
