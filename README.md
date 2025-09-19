@@ -6,7 +6,7 @@
 **Team Members:**
 - Dulf Vincent Genis
 - Shivam Patel
-- Misha Ghandi
+- Misha Gandhi
 - Joanna George
 
 ---
