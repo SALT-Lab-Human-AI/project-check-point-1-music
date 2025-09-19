@@ -2,7 +2,7 @@
 # Joanna George Reflection Articles
 
 *
-A Review of Intelligent Music Generation Systems
+**A Review of Intelligent Music Generation Systems**
 AMA Citation
 Wang L, Zhao Z, Liu H, Pang J, Qin Y, Wu Q. A Review of Intelligent Music Generation Systems. arXiv. 2023; arXiv:2211.09124. doi:10.48550/arXiv.2211.09124.
 Summary
@@ -17,21 +17,22 @@ Transformer-based models are the current state-of-the-art for creating polyphoni
 Effective evaluation requires both computational metrics and human listening tests, connecting technical progress to artistic value.
 
 
-Limitations/Risks
+**Limitations/Risks**
 Many systems lack fine-grained user steering, leading to musical outputs that are unpredictable or not easily tailored for group arrangements.
 
 
 There remain benchmarking gaps and inconsistent evaluation protocols, making it difficult to systematically improve expressiveness or reliability across platforms.
 
 
-Concrete Project Application
-Our project can leverage insights from this review by emphasizing robust, interpretable controls (e.g., difficulty, instrument role, style) and developing structured evaluation combining objective metrics and user feedback—thus directly addressing unmet needs in current intelligent music generation tools, especially for customizable ensemble arrangements.
+****Concrete Project Application**
+**Our project can leverage insights from this review by emphasizing robust, interpretable controls (e.g., difficulty, instrument role, style) and developing structured evaluation combining objective metrics and user feedback—thus directly addressing unmet needs in current intelligent music generation tools, especially for customizable ensemble arrangements.
 
-
-From Tradition to Innovation: A Review of AI Music Generation Models, Datasets, and Evaluation Techniques Milind Uttam Nemade1 , Satheesh Babu2 , Shak
+**
+**From Tradition to Innovation: A Review of AI Music Generation Models, Datasets, and Evaluation Techniques Milind Uttam Nemade1 , Satheesh Babu2 , Shak****
 AMA Citation
 Nemade MU, Babu S, Khan S. From Tradition to Innovation: A Review of AI Music Generation Models, Datasets, and Evaluation Techniques. SSL+CNN. 2024. Available from: https://spast.org/techrep/article/download/5262/537/10498.
-Summary
+**Summary**
+
 This paper reviews how AI helps create music, focusing on models that make melodies and rhythms from computer data. It explains different AI methods from simple rules to advanced neural networks like transformers. The paper highlights the importance of training AI on a wide variety of musical examples and discusses issues of fairness and copyright. The authors emphasize that combining different AI methods can make music sound more natural and expressive.
 Insights Learned
 Using a mix of AI methods helps create music that sounds better and more interesting.
@@ -43,15 +44,15 @@ Training AI on diverse music examples allows it to produce more realistic and va
 It is important to respect artists' rights and avoid copying music unfairly.
 
 
- Limitations/Risks
+** Limitations/Risks**
 Current AI tools often don’t give users enough control over the music they create.
 
 
 Legal and ethical problems related to music ownership and data bias still need solving.
 
 
-Concrete Project Application
-This paper guides us to use AI models that combine strengths for better music parts, ensure our music data respects copyrights, and build a tool that musicians can easily control.
+**Concrete Project Application
+**This paper guides us to use AI models that combine strengths for better music parts, ensure our music data respects copyrights, and build a tool that musicians can easily control.
 All Sources Below Found via Perplexity AI, used to find the best papers surrounding our topics.
 
 *
