@@ -25,6 +25,7 @@ This review examines developments in AI-driven music generation, evolving from s
 
 **Project Application:**  
 Establish a user friendly interface that evaluates music following music theory by utilizing a two prong approach (symbolic and audio models) to create an initial prototype ready for user feedback cycles. Stress testing the system and analyzing outliers will help improve the model's capability. 
+
 ---
 
 ## Features, Models, and Applications of Deep Learning in Music Composition  
