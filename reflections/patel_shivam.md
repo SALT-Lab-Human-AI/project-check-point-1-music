@@ -24,7 +24,7 @@ This review examines developments in AI-driven music generation, evolving from s
 - There are numerous future applications of these models which are only starting to get discovered. A use case can look include musical composition for visual media. 
 
 **Project Application:**  
-- Establish a user friendly interface that evaluates music following music theory by utilizing a two prong approach (symbolic and audio models) to create an initial prototype ready for user feedback cycles. Stress testing the system and analyzing outliers will help improve the model's capability. 
+Establish a user friendly interface that evaluates music following music theory by utilizing a two prong approach (symbolic and audio models) to create an initial prototype ready for user feedback cycles. Stress testing the system and analyzing outliers will help improve the model's capability. 
 ---
 
 ## Features, Models, and Applications of Deep Learning in Music Composition  
@@ -46,9 +46,9 @@ This article provides an overview of deep learning practices for music generatio
 
 
 **Limitations/Risks:**  
-1. Transformers and diffusion models are powerful however, they demand high computational resources which can limit accessibility for smaller practitioners or real-time use.
-2. Slower generational speed (especially for diffusion models) can hinder output quality and decreases efficiency (uses more resources).
-3. Distinguising between original audio pieces and AI generated music will continue to be an issue as transformer models continue to produce higher quality, more realistic audio.
+- Transformers and diffusion models are powerful however, they demand high computational resources which can limit accessibility for smaller practitioners or real-time use.
+- Slower generational speed (especially for diffusion models) can hinder output quality and decreases efficiency (uses more resources).
+- Distinguising between original audio pieces and AI generated music will continue to be an issue as transformer models continue to produce higher quality, more realistic audio.
 
 **Project Application:**  
 Leverage transformed level architectures along with diffusion model for creating high-fidelity audio pieces based on text descriptions. Transformer models can help generate audio descriptions which will be useful for converting to sheet music. Exploring this text to music workflow using this hybrid model allows users to guide the model in a way that is expressive of their artistic creativity and intention with AI assistance. LSTM models can also be explored to add weights to the hybrid model so that it pre-trains on music theory rules for accurate and relevant results.
