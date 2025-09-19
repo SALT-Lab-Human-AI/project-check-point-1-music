@@ -7,7 +7,7 @@ Civit, Miguel, et al. “A Systematic Review of Artificial Intelligence-Based Mu
 [Link to article](https://www.sciencedirect.com/science/article/pii/S0957417422013537)
 
 **Summary:**  
-This review examines developments in AI-driven music generation, evolving from symbolic models to state-of-the-art deep learning methods. The authors categorize the research into symbolic, audio, and hybrid music generation, highlighting how the most common generator models were polyphonic models. These models use architectures such as RNNs, GANs, and Transformers that shape the quality of the output and provude different creative possibilities. The paper also expresses the challenges in availability of the dataset, encoding music, and evaluating effectiveness. 
+This review examines developments in AI-driven music generation, evolving from symbolic models to state-of-the-art deep learning methods. The authors categorize the research into symbolic, audio, and hybrid music generation, highlighting how the most common generator models were polyphonic models. These models use architectures such as RNNs, GANs, and Transformers that shape the quality of the output and provide different creative possibilities. The paper also expresses the challenges in availability of the dataset, encoding music, and evaluating effectiveness. 
 
 **Insights:**  
 1. The transition from the Markov model paired with a neural network to transformer based deep learning network marks great success in musical consistency, composition diversity, and output length.
