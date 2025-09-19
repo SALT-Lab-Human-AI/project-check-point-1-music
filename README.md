@@ -3,6 +3,12 @@
 # Harmonizing Chamber Music with AI
 ## A Co-Creative Assistant for Generating Ensemble Parts from a Single Melody
 
+**Team Members:**
+- Dulf Vincent Genis
+- Shivam Patel
+- Misha Ghandi
+- Joanna George
+
 ---
 
 ## Table of Contents
