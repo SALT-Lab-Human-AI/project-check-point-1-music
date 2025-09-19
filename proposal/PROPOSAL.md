@@ -1,4 +1,3 @@
-```markdown
 # Project Proposal – Checkpoint 1
 
 ## Problem Statement & Why It Matters
@@ -106,5 +105,3 @@ This proposal was created with the assistance of Perplexity Browser Assistant (S
 [5]: https://aimusic.so/blog-unleashing-the-power-of-music-ai-a-headtohead-comparison-of-magenta-studio-and-pilot-plugins-43088 "A Head-to-Head Comparison of Magenta Studio and Pilot Plugins, 2024"
 [6]: https://www.rareformaudio.com/blog/suno-ai-ceo-comments-backlash "Suno AI CEO Sparks Controversy with Comments on Music Creation, 2025"
 [7]: https://alliedglobalmarketing.com/knowledge/pages/the-dilemma-of-aigenerated-music "The Dilemma of AI-Generated Music - Allied Global Marketing, 2024"
-
-```
