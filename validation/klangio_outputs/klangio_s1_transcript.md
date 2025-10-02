@@ -1,20 +1,22 @@
-### Tool: [KLANGIO]
-### Scenario: [S3: Generative Wall]
+### Tool: [KLANGI, REMUSIC, SUNO AI, or ELEVENLABS]
+### Scenario: [S1, S2, S3, or S4]
 ### Date & Time: [YYYY-MM-DD HH:MM]
-### Analyst: Dulf Vincent Genis
+### Analyst: [Your Name]
 
 ---
 #### Input & Prompt
-- **Input File:** Melody X (Simple.midi)
-- **Prompt Used:** "Please generate a new viola and cello part to harmonize with this violin melody. The output must be a string trio arrangement."
+- **Scenario Tested:** [Briefly restate the test objective, e.g., "Typical Case: Testing Transcription Accuracy."]
+- **Input File Used:** [e.g., Melody X (8-Bar Simple) / Melody Y (19-Bar Complex)]
+- **Prompt Used:** [Paste the exact, full prompt text used for this scenario.]
 
 #### Outcome & Analysis
-- **Generation Time:** [e.g., 5 seconds]
-- **Final Output Format(s):** [e.g., MusicXML, PDF]
-- **Generative Assessment (CRITICAL GAP):** [e.g., FAILURE. Tool only transcribed the input violin melody; it did NOT generate new parts.]
-- **Transcription Errors (if applicable):** [e.g., None.]
-- **MusicXML Integrity Check:** [e.g., Opened successfully in MuseScore, but track was labeled "Piano."]
+- **Generation Time:** [Record the time in seconds (e.g., 15s, 45s). Note if it was instantaneous.]
+- **Final Output Format(s):** [List all files obtained: e.g., MusicXML, MIDI, PDF, PNG.]
+- **Generative Assessment (CRITICAL GAP):** [Did the tool compose new parts (SUCCESS) or only transcribe the input melody (FAILURE)?]
+- **Transcription Errors (if applicable):** [Count or describe specific errors: e.g., "3 rhythmic errors (triplets were simplified to quarter notes)," or "None."]
+- **MusicXML Integrity Check:** [Check: Did the exported MusicXML/MIDI open cleanly in notation software (e.g., MuseScore/Sibelius)? Were instrument names correct, or was it labeled "Piano"?]
+- **Platform Issues:** [Note any cost incurred, subscription needed, login issues, or confusing UI elements.]
 
 #### Summary of Constraint Adherence
-- **Score (1-5, 5=Perfect):** 1
-- **Notes:** The tool is clearly a transcription utility and has no generative capability. This strongly validates the core gap of our project.
+- **Score (1-5, 5=Perfect):** [Assign a score based on how well the tool met the objective of the scenario.]
+- **Notes:** [Your direct takeaway: Why did it fail this specific test? How does this validate your project's proposed solution?]
