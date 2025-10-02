@@ -23,7 +23,6 @@
 
 ---
 
-### Tool: [KLANGI, REMUSIC, SUNO AI, or ELEVENLABS]
 ### Scenario: [S2]
 ### Date & Time: [YYYY-MM-DD HH:MM]
 ### Analyst: [Your Name]
@@ -48,10 +47,8 @@
 
 ---
 
-### Tool: [KLANGI, REMUSIC, SUNO AI, or ELEVENLABS]
 ### Scenario: [S3]
 ### Date & Time: [YYYY-MM-DD HH:MM]
-### Analyst: [Your Name]
 
 ---
 #### Input & Prompt
@@ -73,10 +70,8 @@
 
 ---
 
-### Tool: [KLANGI, REMUSIC, SUNO AI, or ELEVENLABS]
 ### Scenario: [S4]
 ### Date & Time: [YYYY-MM-DD HH:MM]
-### Analyst: [Your Name]
 
 ---
 #### Input & Prompt
