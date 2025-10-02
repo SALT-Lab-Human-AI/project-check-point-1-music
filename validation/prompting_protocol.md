@@ -28,5 +28,5 @@ The core test is whether the tool can take a solo violin input and use the promp
 
 ### **Analyst Delegation**
 
-* **You (Person A):** Klangio and Remusic (Focus on Generative Failure & Symbolic Output Integrity)
-* **Partner (Person B):** Suno AI and ElevenLabs (Focus on Limited Control & Audio-Only Output)
+* **Dulf Vincent Genis:** Klangio and Remusic
+* **Joanna George:** Suno AI and ElevenLabs
