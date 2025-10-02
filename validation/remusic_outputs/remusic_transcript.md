@@ -43,5 +43,5 @@
 - **Platform Issues:** None.
 
 #### Summary of Constraint Adherence
-- **Score (1-5, 5=Perfect):** 1
+- **Score (1-5, 5=Perfect):** 2
 - **Notes:** While the tool did generate sheet music and allowed to export, it failed to generate the requested parts and only transcribed the input melody. This indicates a significant gap in its generative capabilities, validating the need for improved compositional algorithms in our project.
