@@ -1,4 +1,4 @@
-## Prompting Protocol for AI Music Tool Validation
+## Prompting Protocol for AI Music Tool Validation (Joanna and Dulf)
 
 ### **Project Goal**
 
