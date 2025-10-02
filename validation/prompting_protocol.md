@@ -1,40 +1,32 @@
-This protocol is structured to validate the core gaps of your project: **Controllability, Output Flexibility (Symbolic vs. Audio), and Generative Capacity.**
-
------
-
 ## Prompting Protocol for AI Music Tool Validation
 
 ### **Project Goal**
 
-To validate the necessity of a structured, controllable, MusicXML-outputting AI assistant by systematically demonstrating where existing state-of-the-art tools fail to meet the needs of chamber music ensembles.
+To validate the necessity of a structured, controllable, MusicXML-outputting AI assistant by systematically demonstrating where existing tools fail to meet the needs of chamber music ensembles across four critical testing areas.
 
 ### **Input Materials (Pre-Prepared)**
 
-  * **Melody X (Simple.midi):** An 8-bar, 4/4 solo melody in C Major, quarter notes. (Used for typical, simple control, and generative failure tests.)
-  * **Melody Y (Complex.midi):** An 8-bar, 4/4 melody including a few **sparse double stops** and **triplets**. (Used for complexity/robustness tests.)
+| File | Description | Use Case |
+| :--- | :--- | :--- |
+| **Melody X (Simple.midi/audio)** | 8-bar excerpt of "Married Life" (Up Theme). Clean, single-line melody. | Used for **Controllability** and **Generative Failure** tests. |
+| **Melody Y (Complex.midi/audio)** | A more rhythmically complex 8-bar excerpt, potentially including tempo changes or complex rhythmic figures. | Used for **Complexity** and **Robustness** tests. |
 
------
+---
 
-## **Part 1: Symbolic Output Tools (Klangio & Remusic)**
+## Unified Validation Scenarios (Klangio, Remusic, Suno AI, ElevenLabs)
 
-**Focus:** — Testing Transcription Accuracy, Symbolic Output Fidelity, and **Generative Failure** (i.e., proving they only transcribe, not compose).
+The core test is whether the tool can take a solo violin input and use the prompt to **compose new parts** for a string trio, and if the output is **usable symbolic data**.
 
-| Scenario | Input Type & File | Prompt Text (If Applicable) | Target Gap(s) | Expected Outcome & Rationale |
-| :--- | :--- | :--- | :--- | :--- |
-| **S1: Typical Case (Transcription)** | Melody X (Simple.midi) - Uploaded | *(None needed)* | **Quality/Fidelity Gap** | **Expected:** Accurate transcription to sheet music/MusicXML. **Goal:** Verify baseline functionality and note any quantization/rhythmic errors. |
-| **S2: Edge Case (Complexity)** | Melody Y (Complex.midi) - Uploaded | *(None needed)* | **Usability Gap** | **Expected:** Errors in transcribing polyphony (double stops) or complex rhythms (triplets). **Goal:** Document quality degradation with slightly complex music. |
-| **S3: Failure Case (The Generative Wall)** | Melody X (Simple.midi) - Uploaded | "Please **generate** a new viola and cello part to harmonize with this violin melody. The output must be a **string trio arrangement**." | **Generative Gap (CRITICAL)** | **Expected:** Tool refuses the prompt, ignores the request, or simply transcribes the original melody without generating new material. **Goal:** Prove the tool's core limitation to *compose*. |
-| **S4: Edge Case (Output Fidelity)** | Output from S1 - Exported | *(Export MusicXML)* | **Output Gap** | **Expected:** MusicXML or MIDI output will contain generic track names (e.g., "Track 1," "Piano") and may fail to import cleanly into professional notation software. **Goal:** Document lack of ensemble-ready metadata. |
-
------
-
-## **Part 2: Generative/Audio Tools (Suno AI & ElevenLabs)**
-
-**Focus:** — Testing Limited Control, Stylistic Compliance, and **Audio-Only Output**.
-
-| Scenario | Input Type & Prompt | Target Gap(s) | Expected Outcome & Rationale |
+| Scenario | Core Objective (The Test) | Input Strategy & Fixed Prompt | Expected Failure (Gap Validation) |
 | :--- | :--- | :--- | :--- |
-| **S1: Typical Case** | "An 8-bar, 4/4 melody played by a **solo violin**. Create a simple, classic **string quartet accompaniment** in C major." | **Output Gap** | **Expected:** Audio output with a generic classical feel. **Goal:** Document the requirement for manual transcription, validating the need for MusicXML output. |
-| **S2: Edge Case (Difficulty)** | "A solo violin plays an 8-bar melody. Compose a four-part string arrangement that is **simple enough for a beginner ensemble to play.**" | **Controllability Gap** | **Expected:** The AI ignores the "beginner" constraint and generates music with fast rhythms, complex harmonies, or wide ranges. **Goal:** Prove the inability to enforce expressive constraints like difficulty. |
-| **S3: Edge Case (Instrumentation)** | "An arrangement of a solo melody using ONLY **viola, cello, and second violin**." | **Interpretability Gap** | **Expected:** The AI will likely ignore the explicit exclusion, generating an arrangement for a standard string quartet or using non-string sounds. **Goal:** Show failure to handle specific, non-standard ensemble demands. |
-| **S4: Failure Case** | "Generate a quartet accompaniment for a very fast melody using only half notes. The style must be both Baroque and Jazz." | **Robustness Gap** | **Expected:** Tool generates a chaotic mess, a content safety error, or defaults to a single, confused style. **Goal:** Document failure when presented with contradictory or complex compositional instructions. |
+| **S1: Typical Case (Generative)** | **Test Core Generative/Compositional Ability.** (Minimal interference) | **Input:** Melody X (Simple) - Uploaded/Referenced. **Prompt:** "Please generate a new viola and cello part to harmonize with this violin melody. The output must be a string trio arrangement." | **Trans. Tools (Klangio/Remusic):** Fails Generative Test. Outputs transcription of the input melody ONLY. **Audio Tools (Suno/ElevenLabs):** Fails Output Test. Output is **audio-only**, requiring manual transcription. |
+| **S2: Edge Case (Difficulty Control)** | **Test Fine-Grained Controllability.** (Difficulty constraint) | **Input:** Melody X (Simple) - Uploaded/Referenced. **Prompt:** (S1 Prompt) **+** *Constraint:* "...The generated parts must be simple enough for a **beginner ensemble** to play." | **All Tools:** Fails Controllability Test. Ignores the "beginner" constraint and generates music that is too rhythmically or harmonically complex. |
+| **S3: Edge Case (Instrumentation)** | **Test Structural Interpretation/Exclusion.** (Specific ensemble constraint) | **Input:** Melody X (Simple) - Uploaded/Referenced. **Prompt:** (S1 Prompt) **+** *Constraint:* "...Ensure the final arrangement is for only **Viola, Cello, and Second Violin**." | **All Tools:** Fails Structural Test. Ignores the specific instrument requirement, defaulting to a standard quartet or using generic/inappropriate sounds. |
+| **S4: Failure Case (Complexity & Robustness)** | **Test System Limits.** (Complex input, contradictory control) | **Input:** Melody Y (Complex) - Uploaded/Referenced. **Prompt:** "Generate a four-part string quartet accompaniment that is **both extremely fast and uses only whole notes**." | **Trans. Tools (Klangio/Remusic):** Fails Quality Test. Output contains transcription errors on complex rhythms (Melody Y). **Audio Tools (Suno/ElevenLabs):** Fails Robustness Test. Output is musically nonsensical or results in an immediate content filter/error. |
+
+---
+
+### **Analyst Delegation**
+
+* **You (Person A):** Klangio and Remusic (Focus on Generative Failure & Symbolic Output Integrity)
+* **Partner (Person B):** Suno AI and ElevenLabs (Focus on Limited Control & Audio-Only Output)
