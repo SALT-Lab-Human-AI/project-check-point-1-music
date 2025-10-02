@@ -35,8 +35,8 @@
 - **Prompt Used (DOES NOT ACCEPT PROMPTS):** "Please generate a new viola and cello part to harmonize with this melody. The output must be a trio arrangement. Ensure the final arrangement is for only Piano, Viola, and Cello."
 
 #### Outcome & Analysis
-- **Generation Time:** 7s
-- **Final Output Format(s):** Link (https://studio.klang.io/en/file?id=33729498-fb8b-4aad-a691-991ee1c08525)
+- **Generation Time:** Melody Y (19-Bar Complex)
+- **Final Output Format(s):** MP4 and PNG of sheet music.
 - **Generative Assessment (CRITICAL GAP):** Made sheet music and allowed exports but only transcribed the input melody (FAILURE).
 - **Transcription Errors (if applicable):** None.
 - **MusicXML Integrity Check:** Did export MP3 and PNG but not MusicXML/MIDI.
