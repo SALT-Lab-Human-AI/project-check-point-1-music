@@ -80,7 +80,7 @@ Our tool addresses three critical gaps in existing AI music generation:
 
 ---
 
-## Key Screens & Interactions
+## Key Screens & Interactionsv
 
 ### 1. Landing/Upload Screen
 ```
