@@ -1,5 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/lHqtj83j)
 
+<img width="1920" height="1330" alt="image" src="https://github.com/user-attachments/assets/a9ed7098-5c1d-4545-b8e8-550917a02be5" />
+
 # Harmonizing Chamber Music with AI
 ## A Co-Creative Assistant for Generating Ensemble Parts from a Single Melody
 
@@ -27,8 +29,6 @@
 ---
 
 ## Problem Statement & Why It Matters
-
-<img width="1920" height="1330" alt="image" src="https://github.com/user-attachments/assets/a9ed7098-5c1d-4545-b8e8-550917a02be5" />
 
 
 ### Problem Statement
