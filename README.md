@@ -162,6 +162,8 @@ The project will progress through four distinct checkpoints, with tasks distribu
 - **Refined Idea:** The entire team collectively refines the project idea based on the validation findings, ensuring the tool effectively addresses identified shortcomings.
 
 #### Checkpoint 3: Working Implementation & Demo
+<img width="1024" height="1024" alt="Gemini_Generated_Image_xbk97xxbk97xxbk9 (1)" src="https://github.com/user-attachments/assets/27c83276-ab8b-48e6-8155-159c87e0bf91" />
+
 
 **Goal:** Develop a functional, working version of the AI harmonization tool that delivers on its main purpose at a basic level.
 
