@@ -125,6 +125,8 @@ The tool offers several unique advantages:
 ---
 
 ## Milestones & Roles
+<img width="1024" height="1024" alt="Gemini_Generated_Image_a7wjlca7wjlca7wj" src="https://github.com/user-attachments/assets/7e670316-1596-4afc-9dc4-7fb0c7f418ff" />
+
 
 ---
 
