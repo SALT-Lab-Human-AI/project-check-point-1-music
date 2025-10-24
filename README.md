@@ -28,6 +28,9 @@
 
 ## Problem Statement & Why It Matters
 
+<img width="1920" height="1330" alt="image" src="https://github.com/user-attachments/assets/a9ed7098-5c1d-4545-b8e8-550917a02be5" />
+
+
 ### Problem Statement
 
 Chamber music ensembles often face a significant hurdle when wanting to perform pieces that only exist for a single melodic instrument (e.g., a solo violin part), lacking complementary parts for the rest of the ensemble (e.g., cello, viola, second violin). This limitation restricts repertoire choices for groups, prevents musicians of varying skill levels or instruments from participating in jam sessions due to a lack of chords or sheet music, and poses a barrier for beginners seeking to play desired pieces for which arrangements or chords are unavailable.
