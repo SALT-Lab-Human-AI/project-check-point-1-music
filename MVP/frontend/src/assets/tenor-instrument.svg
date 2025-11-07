@@ -1,0 +1,75 @@
+<svg viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid lines (subtle) -->
+  <line x1="20" y1="45" x2="220" y2="45" stroke="#e5ddd5" stroke-width="1" opacity="0.3"/>
+  <line x1="20" y1="90" x2="220" y2="90" stroke="#e5ddd5" stroke-width="1" opacity="0.5"/>
+  <line x1="20" y1="135" x2="220" y2="135" stroke="#e5ddd5" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Vertical time markers (subtle) -->
+  <line x1="60" y1="30" x2="60" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  <line x1="120" y1="30" x2="120" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  <line x1="180" y1="30" x2="180" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  
+  <!-- Main curved line (below midpoint, bridging role) -->
+  <path d="M 20 108 Q 60 103, 100 106 Q 140 109, 180 106 Q 200 104, 220 108" 
+        stroke="#e76d57" 
+        stroke-width="3" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Prominent connecting arches to alto (above) -->
+  <path d="M 50 108 Q 55 95, 60 85" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 100 106 Q 105 93, 110 82" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 150 107 Q 155 94, 160 84" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Prominent connecting arches to bass (below) -->
+  <path d="M 50 108 Q 55 118, 60 128" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 100 106 Q 105 116, 110 126" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  <path d="M 150 107 Q 155 117, 160 127" 
+        stroke="#e76d57" 
+        stroke-width="2" 
+        opacity="0.4" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Bridge node markers (showing connection points) -->
+  <circle cx="50" cy="108" r="4" fill="#813D31" opacity="0.8"/>
+  <circle cx="60" cy="85" r="3" fill="#813D31" opacity="0.5"/>
+  <circle cx="60" cy="128" r="3" fill="#813D31" opacity="0.5"/>
+  
+  <circle cx="100" cy="106" r="4" fill="#813D31" opacity="0.8"/>
+  <circle cx="110" cy="82" r="3" fill="#813D31" opacity="0.5"/>
+  <circle cx="110" cy="126" r="3" fill="#813D31" opacity="0.5"/>
+  
+  <circle cx="150" cy="107" r="4" fill="#813D31" opacity="0.8"/>
+  <circle cx="160" cy="84" r="3" fill="#813D31" opacity="0.5"/>
+  <circle cx="160" cy="127" r="3" fill="#813D31" opacity="0.5"/>
+  
+  <!-- Subtle harmonic reference lines -->
+  <path d="M 40 82 Q 120 78, 200 82" stroke="#6B6563" stroke-width="1" opacity="0.15" stroke-dasharray="4,3"/>
+  <path d="M 40 130 Q 120 132, 200 130" stroke="#6B6563" stroke-width="1" opacity="0.15" stroke-dasharray="4,3"/>
+</svg>

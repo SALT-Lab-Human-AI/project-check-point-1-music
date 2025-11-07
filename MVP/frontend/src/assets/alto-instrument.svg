@@ -1,0 +1,42 @@
+<svg viewBox="0 0 240 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid lines (subtle) -->
+  <line x1="20" y1="45" x2="220" y2="45" stroke="#e5ddd5" stroke-width="1" opacity="0.3"/>
+  <line x1="20" y1="90" x2="220" y2="90" stroke="#e5ddd5" stroke-width="1" opacity="0.5"/>
+  <line x1="20" y1="135" x2="220" y2="135" stroke="#e5ddd5" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Vertical time markers (subtle) -->
+  <line x1="60" y1="30" x2="60" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  <line x1="120" y1="30" x2="120" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  <line x1="180" y1="30" x2="180" y2="150" stroke="#e5ddd5" stroke-width="0.5" opacity="0.2"/>
+  
+  <!-- Flowing sine-like wave pattern (mid-range expressive) -->
+  <path d="M 20 95 Q 40 75, 60 85 Q 80 95, 100 80 Q 120 65, 140 85 Q 160 105, 180 85 Q 200 70, 220 90" 
+        stroke="#e76d57" 
+        stroke-width="2.5" 
+        fill="none" 
+        stroke-linecap="round"/>
+  
+  <!-- Secondary flowing line creating harmonic texture -->
+  <path d="M 20 98 Q 40 80, 60 88 Q 80 98, 100 83 Q 120 68, 140 88 Q 160 108, 180 88 Q 200 73, 220 93" 
+        stroke="#e76d57" 
+        stroke-width="1.5" 
+        fill="none" 
+        opacity="0.4"
+        stroke-linecap="round"/>
+  
+  <!-- Dynamic note dots with varying sizes (expressive motion) -->
+  <circle cx="40" cy="75" r="3" fill="#813D31" opacity="0.8"/>
+  <circle cx="80" cy="95" r="4" fill="#813D31" opacity="0.8"/>
+  <circle cx="120" cy="65" r="5" fill="#813D31" opacity="0.8"/>
+  <circle cx="160" cy="105" r="3.5" fill="#813D31" opacity="0.8"/>
+  <circle cx="200" cy="70" r="4.5" fill="#813D31" opacity="0.8"/>
+  
+  <!-- Motion trail indicators (showing expressive movement) -->
+  <path d="M 35 75 Q 38 78, 40 75" stroke="#813D31" stroke-width="1" opacity="0.3" fill="none"/>
+  <path d="M 115 65 Q 118 68, 120 65" stroke="#813D31" stroke-width="1" opacity="0.3" fill="none"/>
+  <path d="M 195 70 Q 198 73, 200 70" stroke="#813D31" stroke-width="1" opacity="0.3" fill="none"/>
+  
+  <!-- Subtle guide lines above and below (faded) -->
+  <path d="M 20 55 L 220 60" stroke="#6B6563" stroke-width="1" opacity="0.15" stroke-dasharray="5,5"/>
+  <path d="M 20 120 L 220 115" stroke="#6B6563" stroke-width="1" opacity="0.15" stroke-dasharray="5,5"/>
+</svg>
