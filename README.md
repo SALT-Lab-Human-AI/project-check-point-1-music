@@ -1,9 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/lHqtj83j)
-
-<img width="1920" height="1330" alt="image" src="https://github.com/user-attachments/assets/a9ed7098-5c1d-4545-b8e8-550917a02be5" />
-
-# Harmonizing Chamber Music with AI
-## A Co-Creative Assistant for Generating Ensemble Parts from a Single Melody
+# Harmony Forge: A Co-Creative Approach to Algorithmic Harmonization for String Ensembles
 
 **Team Members:**
 - Dulf Vincent Genis
@@ -11,20 +6,45 @@
 - Misha Gandhi
 - Joanna George
 
+*IS 492 Capstone Project*
+
+---
+
+## Quick Links
+
+- 🔗 **Live Application**: [https://chamber-music-fullstack-deploy.vercel.app/](https://chamber-music-fullstack-deploy.vercel.app/)
+- 📄 **Final Report**: [docs/FINAL_REPORT.md](docs/FINAL_REPORT.md)
+- 📚 **Documentation**: [chamber-music-fullstack-full/docs/](chamber-music-fullstack-full/docs/)
+- 🚀 **Installation Guide**: [chamber-music-fullstack-full/INSTALL.md](chamber-music-fullstack-full/INSTALL.md)
+
 ---
 
 ## Table of Contents
 
+- [Project Overview](#project-overview)
 - [Problem Statement & Why It Matters](#problem-statement--why-it-matters)
 - [Target Users & Core Tasks](#target-users--core-tasks)
 - [Competitive Landscape](#competitive-landscape-existing-systemstools-and-their-shortcomings)
-- [Initial Concept & Value Proposition](#initial-concept-and-value-proposition)
-- [Milestones & Roles](#milestones--roles)
-    - [Checkpoint 1: Kickoff & Proposal](#checkpoint-1-kickoff--proposal)
-    - [Checkpoint 2: Validation & Feedback](#checkpoint-2-validation--feedback)
-    - [Checkpoint 3: Working Implementation & Demo](#checkpoint-3-working-implementation--demo)
-    - [Checkpoint 4: Evaluation & Final Report](#checkpoint-4-evaluation--final-report)
+- [Solution: Harmony Forge](#solution-harmony-forge)
+- [Project Milestones](#project-milestones)
 - [Team Roles](#team-roles)
+- [Repository Structure](#repository-structure)
+- [Documentation](#documentation)
+
+---
+
+## Project Overview
+
+Harmony Forge is a web-based application that democratizes music arranging for string chamber ensembles. The system uses a rule-based algorithmic harmonization engine grounded in classical music theory to generate complementary parts (cello, viola, 2nd violin) for a given melody. Unlike "black box" generative AI models, Harmony Forge prioritizes a co-creative workflow, offering deterministic, rule-based outputs that users can edit and refine.
+
+**Key Features:**
+- Deterministic, interpretable harmonization based on classical music theory
+- Support for 13 instruments across strings, woodwinds, brass, and voices
+- MusicXML output compatible with standard notation software
+- Web-based interface with drag-and-drop file upload
+- Real-time processing and score visualization
+
+For detailed technical documentation, see [chamber-music-fullstack-full/README.md](chamber-music-fullstack-full/README.md).
 
 ---
 
@@ -106,6 +126,31 @@ Existing tools sometimes fail to produce musically plausible or coherent content
 
 ---
 
+## Solution: Harmony Forge
+
+### Core Value Proposition
+
+Harmony Forge addresses the critical gaps identified in existing AI music tools:
+
+1. **Structured, Symbolic Output**: Generates MusicXML files directly, enabling immediate use in notation software (Finale, Sibelius, MuseScore) without manual transcription.
+
+2. **Deterministic & Interpretable**: Uses rule-based algorithms rather than "black box" models, ensuring users understand how harmonies are generated and can trust the output.
+
+3. **Fine-Grained Control**: Provides instrument selection, validation, and deterministic regeneration, giving users control over the harmonization process.
+
+4. **Co-Creative Workflow**: Acts as a supportive tool that handles the "grunt work" (transposition, basic voicing) while leaving creative decisions to the musician.
+
+### Technical Approach
+
+- **Rule-Based Engine**: 2,385 lines of TypeScript implementing classical music theory principles
+- **SATB Voice Leading**: Proper voice leading with parallel motion avoidance
+- **Harmonic Function Theory**: Tonic → Predominant → Dominant → Tonic progressions
+- **Deterministic Output**: Seeded random number generator ensures reproducible results
+
+For complete technical details, see the [Final Report](docs/FINAL_REPORT.md) and [Architecture Documentation](chamber-music-fullstack-full/docs/architecture.md).
+
+---
+
 ## Initial Concept and Value Proposition
 <img width="1024" height="1024" alt="Gemini_Generated_Image_iw8jnciw8jnciw8j" src="https://github.com/user-attachments/assets/990540e3-7049-460b-9dee-242724619057" />
 
@@ -126,7 +171,7 @@ The tool offers several unique advantages:
 
 ---
 
-## Milestones & Roles
+## Project Milestones
 <img width="1024" height="1024" alt="Gemini_Generated_Image_a7wjlca7wjlca7wj" src="https://github.com/user-attachments/assets/7e670316-1596-4afc-9dc4-7fb0c7f418ff" />
 
 
@@ -180,24 +225,24 @@ The project will progress through four distinct checkpoints, with tasks distribu
 - **Initial Musical Quality Assurance:** Project Lead provides ongoing feedback to the ML Engineer to ensure the generated outputs are musically coherent and relevant for chamber music, even at this basic level.
 - **Data Pipeline & Preprocessing:** Data Scientist ensures the data pipeline is functional and the necessary training data is accessible for the ML Engineer's model.
 
-#### Checkpoint 4: Evaluation & Final Report
+#### Checkpoint 4: Evaluation & Final Report ✅
 
 **Goal:** Evaluate the tool's effectiveness through user study or experiments, and comprehensively document the entire project.
 
-**Tasks:**
+**Completed Tasks:**
 
-- **Evaluation Design:**
-    - Project Lead designs a user study protocol to assess usability, user experience, and acceptance. This includes defining research questions (e.g., around controllability, authorship, expressiveness), participant recruitment (e.g., expert/hobbyist musicians, beginners), and questionnaire design (e.g., SUS, CSI, TAM).
-    - Data Scientist designs quantitative experiments to measure the musical quality and effectiveness of the AI-generated parts using objective metrics (EB, UPC, QN, DP, TD, FAD).
-- **Data Collection & Analysis:**
-    - Project Lead conducts the user study, collects qualitative data (interviews, open-ended questions), and analyzes themes related to user experience and creative agency.
-    - Data Scientist runs experiments, collects quantitative data from both user studies (e.g., Likert scale responses) and AI output metrics, and performs statistical analysis.
-- **Final Report Writing:**
-    - Project Lead authors the overall project summary, introduction, discussion (interpreting qualitative findings, user feedback on ownership, control, and expressiveness), and conclusion.
-    - ML Engineer contributes detailed sections on the AI model architecture, training, and technical performance.
-    - Software Engineer documents the system architecture, UI implementation, and deployment process.
-    - Data Scientist writes sections on methodology, data analysis, quantitative results, and critically addresses ethical considerations related to AI training data, copyright (HARMONYCLOAK), and the socio-technical implications of AI in creative work.
-- **Demo Refinement:** The entire team collaborates to refine the tool and prepare a compelling demo showcasing its capabilities and how it addresses the initial problem.
+- ✅ **User Study**: Conducted qualitative evaluation with three domain experts (professional violinist, songwriter, music educator)
+- ✅ **Final Report**: Comprehensive 5,500+ word report documenting the full project lifecycle
+- ✅ **System Documentation**: Complete technical documentation including architecture, use cases, telemetry, and safety/privacy notes
+- ✅ **Deployment**: Live application deployed at https://chamber-music-fullstack-deploy.vercel.app/
+
+**Deliverables:**
+- [Final Report](docs/FINAL_REPORT.md) - Complete project documentation
+- [Installation Guide](chamber-music-fullstack-full/INSTALL.md) - Setup instructions
+- [Architecture Documentation](chamber-music-fullstack-full/docs/architecture.md) - System design
+- [Use Cases & Test Cases](chamber-music-fullstack-full/docs/use-cases.md) - Testing documentation
+- [Telemetry & Observability](chamber-music-fullstack-full/docs/telemetry.md) - Logging strategy
+- [Safety & Privacy](chamber-music-fullstack-full/docs/safety-privacy.md) - Security measures
 
 ---
 
@@ -229,3 +274,112 @@ This project will be undertaken by a four-person team, leveraging individual str
     - **Quantitative Evaluation:** Develops and applies objective metrics to evaluate AI-generated music and the tool's effectiveness (e.g., EB, UPC, QN, DP, TD, FAD).
     - **Ethical AI & Data Governance:** Researches and implements strategies to address data privacy, copyright (e.g., HARMONYCLOAK concepts), and potential biases in training data.
     - **Experimentation & Analysis:** Designs experiments, conducts statistical analysis of results, and contributes to the quantitative sections of the reports.
+
+---
+
+## Repository Structure
+
+```
+project-check-point-1-music/
+├── docs/
+│   └── FINAL_REPORT.md              # Final project report
+├── chamber-music-fullstack-full/    # Main application
+│   ├── INSTALL.md                   # Installation guide
+│   ├── .env.example                  # Environment template
+│   ├── README.md                    # Technical documentation
+│   ├── docs/                        # Technical docs
+│   │   ├── architecture.md          # System architecture
+│   │   ├── use-cases.md             # Test cases
+│   │   ├── telemetry.md             # Observability
+│   │   └── safety-privacy.md        # Security & privacy
+│   ├── prompts/                     # Configuration
+│   │   ├── README.md                # AI tools documentation
+│   │   └── config.json              # Engine configuration
+│   ├── frontend/                    # React frontend
+│   ├── backend/                     # Node.js backend
+│   └── api/                         # Vercel serverless functions
+├── literature/                      # Research papers
+├── validation/                      # Validation studies
+├── proposal/                        # Project proposal
+└── reflections/                     # Team reflections
+```
+
+---
+
+## Documentation
+
+### For Users
+- **[Installation Guide](chamber-music-fullstack-full/INSTALL.md)** - How to set up and run Harmony Forge locally
+- **[Technical README](chamber-music-fullstack-full/README.md)** - Detailed technical documentation
+
+### For Developers
+- **[Architecture](chamber-music-fullstack-full/docs/architecture.md)** - System design and component architecture
+- **[Use Cases & Tests](chamber-music-fullstack-full/docs/use-cases.md)** - Test scenarios and critical paths
+- **[Telemetry](chamber-music-fullstack-full/docs/telemetry.md)** - Logging and observability plan
+- **[Safety & Privacy](chamber-music-fullstack-full/docs/safety-privacy.md)** - Security measures and privacy policy
+
+### For Researchers
+- **[Final Report](docs/FINAL_REPORT.md)** - Complete project documentation with evaluation results
+- **[Literature Review](literature/)** - Research papers and references
+- **[Validation Studies](validation/)** - Competitive analysis and validation results
+
+---
+
+## Key Findings
+
+### User Study Results
+
+Our qualitative evaluation with domain experts revealed:
+
+- **Professional Performers**: Value the tool for rapid prototyping in gigging contexts
+- **Songwriters/Arrangers**: Appreciate it as a starting point to overcome writer's block
+- **Educators**: See it as a "gateway" tool for introducing students to composition
+
+**Key Insight**: All participants emphasized the importance of maintaining human agency and control, preferring Harmony Forge's deterministic, editable approach over "black box" AI systems.
+
+### Technical Achievements
+
+- ✅ Rule-based harmonization engine (2,385 lines of TypeScript)
+- ✅ Deterministic output with seeded random number generation
+- ✅ Support for 13 instruments with proper range validation
+- ✅ MusicXML output compatible with standard notation software
+- ✅ Web-based deployment on Vercel
+
+### Validation Results
+
+Our validation study comparing existing tools (Klangio, Remusic, Suno AI, ElevenLabs) confirmed:
+
+- **Gap 1**: Lack of structured, symbolic output → Harmony Forge generates MusicXML
+- **Gap 2**: Absent generative control → Harmony Forge provides deterministic, interpretable generation
+- **Gap 3**: Failure to adhere to constraints → Harmony Forge implements validation and refinement
+
+---
+
+## Future Work
+
+See the [Final Report](docs/FINAL_REPORT.md) Section 6.2 for detailed future work, including:
+- Hybrid ML integration for stylistic nuance
+- Counterpoint generation capabilities
+- Genre-specific customization
+- Interactive editing features
+- Educational modes
+
+---
+
+## License
+
+MIT License - see LICENSE file for details
+
+---
+
+## Acknowledgments
+
+- Built with modern web technologies (React, TypeScript, Node.js)
+- Uses classical music theory principles for harmonization
+- Inspired by traditional SATB harmonization techniques
+- OpenSheetMusicDisplay for score rendering
+- Vercel for hosting and serverless functions
+
+---
+
+*Last Updated: December 2024*

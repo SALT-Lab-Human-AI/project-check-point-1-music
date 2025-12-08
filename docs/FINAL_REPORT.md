@@ -18,7 +18,7 @@ This report details the development and evaluation of **Harmony Forge**, a web-b
 
 ### 1.1 Problem Context
 
-The landscape of musical performance is often divided between the rigid structures of classical repertoire and the flexible demands of the "gigging" economy. Musicians performing at weddings, holiday events, or casual jam sessions frequently encounter a logistical bottleneck: the lack of bespoke arrangements for specific instrumentations. As noted by professional violinist KayCee Galano, while standard repertoire is accessible via libraries, specific requests (e.g., a pop song for a string quartet) often require manual arrangement or improvisation, creating a barrier for ensembles that rely on sheet music.
+The landscape of musical performance is often divided between the rigid structures of classical repertoire and the flexible demands of the "gigging" economy. Musicians performing at weddings, holiday events, or casual jam sessions frequently encounter a logistical bottleneck: the lack of bespoke arrangements for specific instrumentations. As noted by one professional violinist participant, while standard repertoire is accessible via libraries, specific requests (e.g., a pop song for a string quartet) often require manual arrangement or improvisation, creating a barrier for ensembles that rely on sheet music.
 
 Furthermore, music educators face the challenge of bridging the gap between performance and composition for students. Arranging music requires a deep understanding of voice leading and harmonic function, skills that beginner musicians often lack. This creates an exclusion zone where only those with theoretical training can participate in the creative side of ensemble playing.
 
@@ -119,11 +119,11 @@ To validate the system, we rejected standard usability metrics (time-on-task) in
 
 **Participants:** We recruited three distinct domain experts to represent our target user personas:
 
-1. **KayCee Galano:** A professional violinist and conservatory student with extensive chamber music experience. This participant represents the "gigging professional" persona, who needs rapid arrangements for performance contexts.
+1. **Professional Violinist:** A conservatory student with extensive chamber music experience. This participant represents the "gigging professional" persona, who needs rapid arrangements for performance contexts.
 
-2. **Aldren Briones:** A songwriter and multi-instrumentalist representing the "gigging/pop" arranger demographic. This participant brings expertise in contemporary music styles and arrangement workflows.
+2. **Songwriter/Arranger:** A multi-instrumentalist representing the "gigging/pop" arranger demographic. This participant brings expertise in contemporary music styles and arrangement workflows.
 
-3. **Kristin Vaziri:** A music educator and orchestra director with experience in niche genres (Mariachi). This participant represents the educator persona, who needs tools that support student learning and diverse repertoire.
+3. **Music Educator:** An orchestra director with experience in niche genres (Mariachi). This participant represents the educator persona, who needs tools that support student learning and diverse repertoire.
 
 **Protocol:** The study was conducted via remote video conferencing. Participants were given a live walkthrough of the app and asked to verbalize their thoughts on the generated output, the workflow, and the ethical implications of the technology. We utilized a semi-structured interview script covering:
 - Background and current pain points in finding repertoire
@@ -160,57 +160,57 @@ While the primary evaluation was qualitative, the system's technical performance
 
 The user study yielded rich data regarding the role of AI in music. The feedback is categorized below by user persona.
 
-#### 4.2.1 The Professional Performer (KayCee Galano)
+#### 4.2.1 The Professional Performer
 
-KayCee, whose role in ensembles is described as a "servant leader," identified a specific, high-value use case: the **Gigging Economy**. She noted that while classical repertoire is abundant via IMSLP, custom arrangements for weddings (e.g., pop songs for string quartets) are a major pain point.
-
-**Key Insights:**
-- She views the app not as a tool for serious classical composition, but as a utility for "jam sessions" and gigs where speed is more important than theoretical perfection.
-- The tool addresses a real need: "What happens to all these arrangers?" she asked, expressing concern about displacement, but also acknowledging that the tool fills a gap where manual arrangement is too time-consuming for the context.
-- She specifically requested "Counterpoint" capabilities, stating that if the app could generate independent melodic lines rather than just block chords, it would be a "game-changer."
-
-**Ethical Stance:** KayCee expressed concern about displacement of professional arrangers, but also recognized that the tool serves a different market (rapid prototyping for gigs) rather than replacing high-end arrangement work. She jokingly noted the tool "might be banned" for undergrad theory students, highlighting concerns about academic integrity.
-
-#### 4.2.2 The Songwriter/Arranger (Aldren Briones)
-
-Aldren, who identifies as a "loyal follower" in ensembles but an active arranger, provided critical feedback on the musical output. He described the AI-generated harmonies as creating a "second version" of the song—harmonically functional but distinct from the original composer's intent.
+The professional violinist participant, whose role in ensembles is described as a "servant leader," identified a specific, high-value use case: the **Gigging Economy**. This participant noted that while classical repertoire is abundant via IMSLP, custom arrangements for weddings (e.g., pop songs for string quartets) are a major pain point.
 
 **Key Insights:**
-- He valued the tool as a "starting point" to overcome writer's block, aligning with research findings that AI can serve as an inspiration engine (Fu et al., 2024).
-- However, he noted that the bass lines often lacked the specific character he imagined, suggesting the need for more user control over the "style" of the generation.
+- This participant views the app not as a tool for serious classical composition, but as a utility for "jam sessions" and gigs where speed is more important than theoretical perfection.
+- The tool addresses a real need: "What happens to all these arrangers?" the participant asked, expressing concern about displacement, but also acknowledging that the tool fills a gap where manual arrangement is too time-consuming for the context.
+- This participant specifically requested "Counterpoint" capabilities, stating that if the app could generate independent melodic lines rather than just block chords, it would be a "game-changer."
+
+**Ethical Stance:** This participant expressed concern about displacement of professional arrangers, but also recognized that the tool serves a different market (rapid prototyping for gigs) rather than replacing high-end arrangement work. The participant jokingly noted the tool "might be banned" for undergrad theory students, highlighting concerns about academic integrity.
+
+#### 4.2.2 The Songwriter/Arranger
+
+The songwriter participant, who identifies as a "loyal follower" in ensembles but an active arranger, provided critical feedback on the musical output. This participant described the AI-generated harmonies as creating a "second version" of the song—harmonically functional but distinct from the original composer's intent.
+
+**Key Insights:**
+- This participant valued the tool as a "starting point" to overcome writer's block, aligning with research findings that AI can serve as an inspiration engine (Fu et al., 2024).
+- However, this participant noted that the bass lines often lacked the specific character imagined, suggesting the need for more user control over the "style" of the generation.
 - The harmonies sometimes felt "weird" or "off," indicating that strict adherence to vertical chord construction sometimes compromises the horizontal melodic line.
 
-**Co-Design Feedback:** Aldren advocated for a workflow that is not "one-click" but allows for editing between input and output, such as regenerating specific harmonies or defining the genre. He emphasized the importance of maintaining creative control and the ability to refine AI output to match artistic vision.
+**Co-Design Feedback:** This participant advocated for a workflow that is not "one-click" but allows for editing between input and output, such as regenerating specific harmonies or defining the genre. The participant emphasized the importance of maintaining creative control and the ability to refine AI output to match artistic vision.
 
-**Ethical Concerns:** Aldren raised a concern about using the tool on unreleased music, implying potential intellectual property risks if the AI utilizes user data for training. This highlights the importance of transparent data handling and user control over their creative inputs.
+**Ethical Concerns:** This participant raised a concern about using the tool on unreleased music, implying potential intellectual property risks if the AI utilizes user data for training. This highlights the importance of transparent data handling and user control over their creative inputs.
 
-#### 4.2.3 The Educator (Kristin Vaziri)
+#### 4.2.3 The Educator
 
-Kristin provided the most diverse perspective, balancing her roles as a performer and a teacher. She highlighted the struggle of arranging for **Mariachi** ensembles, where repertoire is not centralized and relies heavily on manual transcription.
+The music educator participant provided the most diverse perspective, balancing roles as a performer and a teacher. This participant highlighted the struggle of arranging for **Mariachi** ensembles, where repertoire is not centralized and relies heavily on manual transcription.
 
 **Key Insights:**
-- She framed the app as a "gateway" for students. By allowing students to dabble in composition without needing years of theory training, the app serves an educational purpose.
+- This participant framed the app as a "gateway" for students. By allowing students to dabble in composition without needing years of theory training, the app serves an educational purpose.
 - The tool addresses a real need in niche genres (Mariachi) where arrangements are scarce and manual transcription is time-consuming.
-- She emphasized that the tool should handle the "grunt work" (transposition, basic voicing) while leaving creative decisions to the musician.
+- This participant emphasized that the tool should handle the "grunt work" (transposition, basic voicing) while leaving creative decisions to the musician.
 
-**Ethical Stance:** Kristin emphasized that AI should remain a "supportive role," never having the "final say." She wants the tool to support learning and creativity without replacing the educational value of understanding music theory. This aligns with research on co-creative systems that emphasize maintaining human agency (Newman et al., 2023).
+**Ethical Stance:** This participant emphasized that AI should remain a "supportive role," never having the "final say." The participant wants the tool to support learning and creativity without replacing the educational value of understanding music theory. This aligns with research on co-creative systems that emphasize maintaining human agency (Newman et al., 2023).
 
 ### 4.3 Analysis of User Needs
 
 Synthesizing the feedback reveals a clear tension between **automation** and **agency**. All three experts rejected the idea of a fully autonomous AI composer. Instead, they desire a **Co-Creative Assistant**.
 
-**Control is Paramount:** Users want to tweak the output. As Aldren noted, the ability to regenerate harmonies or edit chord notations is essential. This finding aligns with research showing that users prefer AI systems that provide control and interpretability rather than "black box" generation (Tchemeube et al., 2024).
+**Control is Paramount:** Users want to tweak the output. As the songwriter participant noted, the ability to regenerate harmonies or edit chord notations is essential. This finding aligns with research showing that users prefer AI systems that provide control and interpretability rather than "black box" generation (Tchemeube et al., 2024).
 
-**Context Awareness:** The current algorithm applies classical rules universally. However, Kristin's need for Mariachi styles and KayCee's need for wedding gigs suggest that the system needs "Genre Modes" that adjust the voice-leading rules (e.g., allowing parallel thirds in Mariachi, or more contemporary harmonic progressions for pop songs).
+**Context Awareness:** The current algorithm applies classical rules universally. However, the educator's need for Mariachi styles and the professional violinist's need for wedding gigs suggest that the system needs "Genre Modes" that adjust the voice-leading rules (e.g., allowing parallel thirds in Mariachi, or more contemporary harmonic progressions for pop songs).
 
-**Trust and Interpretability:** The "weird" harmonies detected by Aldren suggest that the system's strict adherence to vertical chord construction sometimes compromises the horizontal melodic line. This reflects the theoretical challenge of prioritizing vertical sonority vs. horizontal counterpoint. The deterministic, rule-based approach helps build trust, but users need more visibility into why certain harmonic choices were made.
+**Trust and Interpretability:** The "weird" harmonies detected by the songwriter participant suggest that the system's strict adherence to vertical chord construction sometimes compromises the horizontal melodic line. This reflects the theoretical challenge of prioritizing vertical sonority vs. horizontal counterpoint. The deterministic, rule-based approach helps build trust, but users need more visibility into why certain harmonic choices were made.
 
-**Educational Value:** Kristin's framing of the tool as a "gateway" highlights an important use case: the tool can lower barriers to entry for students learning composition, but it must be designed to support learning rather than replace it. This requires careful consideration of how the tool is presented and used in educational contexts.
+**Educational Value:** The educator's framing of the tool as a "gateway" highlights an important use case: the tool can lower barriers to entry for students learning composition, but it must be designed to support learning rather than replace it. This requires careful consideration of how the tool is presented and used in educational contexts.
 
 **Use Case Differentiation:** The feedback reveals distinct use cases:
-- **Rapid Prototyping for Gigs:** Speed and basic functionality are more important than perfection (KayCee)
-- **Creative Inspiration:** Overcoming writer's block and exploring harmonic possibilities (Aldren)
-- **Educational Gateway:** Introducing students to composition concepts without requiring extensive theory training (Kristin)
+- **Rapid Prototyping for Gigs:** Speed and basic functionality are more important than perfection (professional violinist)
+- **Creative Inspiration:** Overcoming writer's block and exploring harmonic possibilities (songwriter)
+- **Educational Gateway:** Introducing students to composition concepts without requiring extensive theory training (educator)
 
 These use cases require different feature sets and design approaches, suggesting that future development should consider user personas and use-case-specific workflows.
 
@@ -226,7 +226,7 @@ The current iteration of Harmony Forge relies on a rigid set of music theory rul
 
 2. **Genre Specificity:** It applies 18th-century voice-leading rules to all inputs, which may make pop or folk inputs sound stiff or "academic." As noted by participants, the system needs genre-aware modes that adjust harmonic and voice-leading rules to match the stylistic context.
 
-3. **Counterpoint Limitations:** The current system generates primarily block chords rather than independent melodic lines. KayCee's request for counterpoint capabilities highlights a significant limitation: the system prioritizes vertical harmony over horizontal melodic interest.
+3. **Counterpoint Limitations:** The current system generates primarily block chords rather than independent melodic lines. The professional violinist's request for counterpoint capabilities highlights a significant limitation: the system prioritizes vertical harmony over horizontal melodic interest.
 
 4. **Non-Chord Tone Handling:** While the system recognizes some non-chord tones (passing tones, neighbor tones, suspensions), its handling is limited. More sophisticated treatment of non-chord tones would create more fluid, expressive melodic lines.
 
@@ -236,11 +236,11 @@ The current iteration of Harmony Forge relies on a rigid set of music theory rul
 
 A recurring theme in the user study was the fear of displacement and the need to maintain human agency in creative work.
 
-**Displacement of Arrangers:** KayCee expressed concern about "what happens to all these arrangers" if the software becomes too proficient. However, the consensus was that AI cannot replace the "live performance" or the human element of creativity. The tool serves a different market (rapid prototyping, educational support) rather than replacing high-end arrangement work. This aligns with research showing that users value AI as a supportive tool rather than a replacement (Newman et al., 2023).
+**Displacement of Arrangers:** The professional violinist participant expressed concern about "what happens to all these arrangers" if the software becomes too proficient. However, the consensus was that AI cannot replace the "live performance" or the human element of creativity. The tool serves a different market (rapid prototyping, educational support) rather than replacing high-end arrangement work. This aligns with research showing that users value AI as a supportive tool rather than a replacement (Newman et al., 2023).
 
-**Academic Integrity:** There is a risk that students might use the tool to bypass music theory homework (e.g., part-writing exercises). KayCee jokingly noted it "might be banned" for undergrad theory students. This highlights the need for careful consideration of how the tool is presented and used in educational contexts. The tool should support learning rather than replace it, requiring clear guidelines and potentially educational modes that explain the theory behind generated choices.
+**Academic Integrity:** There is a risk that students might use the tool to bypass music theory homework (e.g., part-writing exercises). One participant jokingly noted it "might be banned" for undergrad theory students. This highlights the need for careful consideration of how the tool is presented and used in educational contexts. The tool should support learning rather than replace it, requiring clear guidelines and potentially educational modes that explain the theory behind generated choices.
 
-**Misuse on Unreleased Music:** Aldren raised a concern about using the tool on unreleased music, implying potential intellectual property risks if the AI utilizes user data for training. This highlights the importance of:
+**Misuse on Unreleased Music:** The songwriter participant raised a concern about using the tool on unreleased music, implying potential intellectual property risks if the AI utilizes user data for training. This highlights the importance of:
 - Transparent data handling policies
 - Local processing options (the current system processes files server-side, but could be adapted for client-side processing)
 - Clear user agreements about data usage
@@ -288,19 +288,19 @@ To address the limitations identified, future development will focus on:
 
 2. **Advanced Music Theory Guardrails:** Implementing more sophisticated checks for specific voice-leading errors (parallel fifths, direct octaves) and adding support for non-chord tones (passing tones, suspensions, appoggiaturas) to create more fluid melodic lines. The system should also recognize phrase structure and apply harmonic logic at the phrase level rather than moment-to-moment.
 
-3. **Counterpoint Generation:** Developing algorithms to generate independent melodic lines rather than just block chords. This would address KayCee's "game-changer" request and create more musically interesting arrangements. The system could use species counterpoint rules or learn from contrapuntal examples in training data.
+3. **Counterpoint Generation:** Developing algorithms to generate independent melodic lines rather than just block chords. This would address the professional violinist's "game-changer" request and create more musically interesting arrangements. The system could use species counterpoint rules or learn from contrapuntal examples in training data.
 
-4. **Genre Customization:** Creating "Style Profiles" (e.g., Mariachi, Pop, Baroque, Jazz) that adjust the underlying rule weights to suit the user's specific performance context. This would address Kristin's need for Mariachi-specific arrangements and KayCee's need for contemporary styles. Each profile would modify:
+4. **Genre Customization:** Creating "Style Profiles" (e.g., Mariachi, Pop, Baroque, Jazz) that adjust the underlying rule weights to suit the user's specific performance context. This would address the educator's need for Mariachi-specific arrangements and the professional violinist's need for contemporary styles. Each profile would modify:
    - Harmonic progression preferences
    - Voice-leading rules (e.g., allowing parallel thirds in some styles)
    - Rhythm and note density
    - Instrumentation conventions
 
-5. **Input Flexibility:** Implementing PDF/PNG scanning (Optical Music Recognition) to allow users to upload sheet music directly, streamlining the workflow for educators like Kristin. This would eliminate the need for users to have MusicXML or MIDI files, making the tool more accessible.
+5. **Input Flexibility:** Implementing PDF/PNG scanning (Optical Music Recognition) to allow users to upload sheet music directly, streamlining the workflow for educators. This would eliminate the need for users to have MusicXML or MIDI files, making the tool more accessible.
 
-6. **Interactive Editing:** Developing an in-browser score editor that allows users to edit generated harmonies, regenerate specific sections, and see real-time updates. This would address Aldren's need for iterative refinement and maintain user agency in the creative process.
+6. **Interactive Editing:** Developing an in-browser score editor that allows users to edit generated harmonies, regenerate specific sections, and see real-time updates. This would address the songwriter's need for iterative refinement and maintain user agency in the creative process.
 
-7. **Educational Modes:** Creating an "Educational Mode" that explains the theory behind generated choices, shows voice-leading analysis, and provides learning resources. This would support Kristin's educational use case while addressing academic integrity concerns.
+7. **Educational Modes:** Creating an "Educational Mode" that explains the theory behind generated choices, shows voice-leading analysis, and provides learning resources. This would support the educator's use case while addressing academic integrity concerns.
 
 8. **User Learning:** Implementing systems that learn from user edits and preferences, adapting to individual styles over time. This would address the homogenization risk and create more personalized outputs.
 
