@@ -90,19 +90,25 @@ Harmony Forge is a web application designed to intake a single melody line and o
 
 **Technical Stack:** React/TypeScript frontend, Node.js/Express backend, deployed on Vercel serverless functions.
 
-### 3.2 Evaluation Design: Co-Design Think-Aloud
+### 3.2 Evaluation Design: Conceptual Walkthrough & Self-Guided Exploration
 
-To validate the system, we rejected standard usability metrics (time-on-task) in favor of a **Conceptual Evaluation** using a "Think Aloud" protocol. This method captures the cognitive processes and immediate reactions of domain experts as they interact with the tool, providing rich qualitative data about the system's value proposition and ethical implications.
+We conducted user studies with three domain experts—a music educator, a songwriter, and a professional violinist—to gather qualitative insights. Rather than assigning specific tasks to measure standard usability metrics, we used a **conceptual walkthrough approach** via live screen-sharing and a guided interview script. This method focused on conceptual validation and co-design input, letting us demonstrate the backend harmonization logic and establish ethical framing.
 
-**Participants:** We recruited three distinct domain experts to represent our target user personas:
+**Participants:** We recruited three distinct domain experts representing our target user personas:
 
-1. **Professional Violinist:** A conservatory student with extensive chamber music experience. This participant represents the "gigging professional" persona, who needs rapid arrangements for performance contexts.
+1. **Professional Violinist:** A conservatory student with extensive chamber music experience, representing the "gigging professional" persona who needs rapid arrangements for performance contexts.
 
-2. **Songwriter/Arranger:** A multi-instrumentalist representing the "gigging/pop" arranger demographic. This participant brings expertise in contemporary music styles and arrangement workflows.
+2. **Songwriter/Arranger:** A multi-instrumentalist representing the "gigging/pop" arranger demographic, bringing expertise in contemporary music styles and arrangement workflows.
 
-3. **Music Educator:** An orchestra director with experience in niche genres (Mariachi). This participant represents the educator persona, who needs tools that support student learning and diverse repertoire.
+3. **Music Educator:** An orchestra director with experience in niche genres (Mariachi), representing the educator persona who needs tools that support student learning and diverse repertoire.
 
-**Protocol:** Remote video sessions where participants tried the app and talked through their thoughts. We covered background, interface impressions, harmony feedback, use cases, ethical concerns, and feature requests. Sessions were recorded and transcribed for thematic analysis, focusing on value, control needs, quality concerns, and ethical implications (Tchemeube et al., 2024; Newman et al., 2023).
+**Two-Phase Protocol:**
+
+**Phase 1 - Conceptual Walkthrough:** Remote video sessions with live screen-sharing where we demonstrated the system and walked participants through the harmonization process. We used a guided interview script covering background, initial impressions, harmony feedback, use cases, ethical concerns, and feature requests. This phase focused on understanding the conceptual value of the tool, gathering co-design input, and building trust through transparency about how the system works.
+
+**Phase 2 - Self-Guided Exploration:** After the live demo, participants got the deployable app link and project materials to do deep, self-guided usability testing on their own time. This structure built trust through the initial walkthrough while letting users explore the tool's creative control and customization features individually, providing more authentic feedback about real-world usage. We plan to follow up with participants after they've had time to use the app independently to gather additional insights.
+
+**Data Collection:** Sessions were recorded and transcribed for thematic analysis, focusing on perceived value, control needs, quality concerns, and ethical implications (Tchemeube et al., 2024; Newman et al., 2023). The two-phase approach captured both immediate reactions during the walkthrough and more considered feedback from independent exploration.
 
 ---
 
