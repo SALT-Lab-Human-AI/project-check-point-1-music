@@ -2,7 +2,7 @@
 
 **Authors:**
 
-Misha Gandhi, Joanna George, Shivam Patel, Dulf Vincent Genis
+Dulf Vincent Genis, Shivam Patel, Misha Gandhi, Joanna George
 
 *IS 492 Capstone Project*
 
