@@ -1,4 +1,4 @@
-# Harmony Forge: A Co-Creative Approach to Algorithmic Harmonization for String Ensembles
+# HarmonyForge: A Co-Creative Approach to Algorithmic Harmonization for String Ensembles
 
 **Authors:**
 
