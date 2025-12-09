@@ -6,6 +6,8 @@ Misha Gandhi, Joanna George, Shivam Patel, Dulf Vincent Genis
 
 *IS 492 Capstone Project*
 
+*Last Updated: December 9, 2025*
+
 ---
 
 ## Abstract
@@ -32,7 +34,7 @@ Unlike diffusion-based generative models that operate as "black boxes," Harmony 
 
 ### 1.3 Scope of the Report
 
-This report documents the full lifecycle of the Harmony Forge project, from theoretical grounding to system implementation and user evaluation. We analyze the tension between algorithmic rigidity and musical creativity, utilizing feedback from domain experts to propose a future where software acts not as a replacement for the human arranger, but as a "servant leader" in the co-creative process. The report is structured as follows: Section 2 reviews related work and theoretical foundations; Section 3 describes the system architecture and evaluation methodology; Section 4 presents results and analysis; Section 5 discusses limitations and ethical considerations; and Section 6 concludes with future directions.
+This report walks through the Harmony Forge project from start to finish—the theory behind it, how we built it, and what we learned from testing it with real musicians. We look at the push and pull between following strict musical rules and creating something that actually sounds good, using feedback from experts to figure out how software can help rather than replace human arrangers. The report covers related work, our system design, evaluation results, limitations, and where we want to take this next.
 
 ---
 
@@ -40,39 +42,23 @@ This report documents the full lifecycle of the Harmony Forge project, from theo
 
 ### 2.1 Classical Music Theory Principles
 
-The backbone of Harmony Forge is built upon the foundational rules of Western tonal harmony. As detailed in standard music theory pedagogy, the construction of functional harmony relies on specific hierarchies of chords and voice-leading protocols.
-
-**Harmonic Function:** The system relies on the flow of harmonic tension and resolution, specifically the movement from Tonic (stability) to Predominant and Dominant (tension) and back to Tonic. The "Circle of Fifths" progression serves as a fundamental engine for these movements, driving harmonic momentum in a way that is predictable and pleasing to the Western ear (Hutchinson, 2017). This functional harmony approach ensures that generated progressions follow established patterns of tension and release, creating musically coherent arrangements.
-
-**Voice Leading:** A critical challenge in automated arrangement is avoiding "objectionable parallels" (parallel fifths and octaves), which destroy voice independence. The Harmony Forge algorithm implements these rules programmatically, ensuring that parts move in contrary or oblique motion rather than parallel motion where prohibited. Furthermore, the system handles the spacing of chords, ensuring that the upper voices (violin, viola) remain within an octave of each other to maintain a balanced texture, a principle derived from the overtone series and chorale style writing (Hutchinson, 2017).
-
-The system implements SATB (Soprano, Alto, Tenor, Bass) voice leading principles, where each voice operates within its designated range:
-- **Soprano**: C4 to C6 (MIDI 60-84) - typically the melody
-- **Alto**: G3 to E5 (MIDI 55-76) - first harmony voice
-- **Tenor**: C3 to G4 (MIDI 48-67) - second harmony voice  
-- **Bass**: E2 to C4 (MIDI 40-60) - third harmony voice
-
-These constraints ensure that generated parts remain playable within standard instrument ranges while maintaining proper voice independence.
+Harmony Forge uses standard Western tonal harmony rules. We follow the Tonic → Predominant → Dominant → Tonic flow, using the circle of fifths to drive harmonic movement (Hutchinson, 2017). We avoid parallel fifths and octaves (which kill voice independence), prefer stepwise motion, and keep voices properly spaced. Each SATB voice has its range: Soprano (C4-C6), Alto (G3-E5), Tenor (C3-G4), Bass (E2-C4). This keeps parts playable and musically coherent.
 
 ### 2.2 Algorithmic vs. Diffusion-Based Generation
 
-In the broader context of computational music, there is a significant divergence between rule-based systems (like Harmony Forge) and modern Deep Learning approaches. Recent advancements, such as **Stochastic Control Guidance (SCG)** for diffusion models, allow for the generation of symbolic music (piano rolls) that adheres to non-differentiable rules like note density or specific chord progressions (Huang et al., 2024). These models operate by training on vast datasets (e.g., MAESTRO, Pop909) and "diffusing" noise into structured music.
-
-While diffusion models represent the state-of-the-art in generating expressive performance dynamics (velocity, pedal), they often suffer from a "black box" problem where the user has limited control over the specific theoretical justification of a generated note. Harmony Forge takes a divergent path. By utilizing a deterministic, rule-based TypeScript engine, it sacrifices the nuance of deep learning for **interpretability and editability**. This aligns with the "Path Integral Control" concept in stochastic theory, where the goal is to steer generation toward a specific, rule-compliant target, but achieves it through explicit coding of theory rules rather than probabilistic sampling (Huang et al., 2024).
+There's a big difference between rule-based systems like ours and machine learning approaches. Diffusion models can generate expressive music by learning from huge datasets, but they're black boxes—you can't see why they made a choice (Huang et al., 2024). We went the other way: deterministic rules that you can understand and edit. We lose some nuance but gain transparency and control.
 
 ### 2.3 Human-AI Co-Creation in Music
 
-Research on human-AI collaboration in music creation reveals important tensions between automation and agency. Studies of co-creative systems show that users value tools that provide inspiration and overcome "writer's block," but they also emphasize the need for emotional depth and human agency in the creative process (Fu et al., 2024). Participants in co-creation studies have criticized AI-generated music for lacking "emotional depth" and "rawness," emphasizing the importance of retaining human emotional involvement and personal creative identities (Fu et al., 2024).
-
-This research informs Harmony Forge's design philosophy: the tool should act as a "supportive role" rather than having the "final say" in creative decisions. The system handles the "grunt work" (transposition, basic voicing) while leaving creative decisions to the musician, aligning with findings that users prefer AI systems that support rather than replace human creativity (Newman et al., 2023).
+Research shows people want AI tools that help with inspiration and writer's block, but they also need to feel in control and maintain emotional connection to their work (Fu et al., 2024). AI-generated music often lacks "emotional depth" because it's missing the human touch. That's why Harmony Forge is designed as a helper, not a replacement. We handle the tedious stuff (transposition, basic voicing) so musicians can focus on the creative decisions (Newman et al., 2023).
 
 ### 2.4 Evaluation of AI Music Systems
 
-Recent advances in AI-driven music have enabled the creation of harmonization and complex genres like chamber music. However, challenges remain in producing outputs that are both musically plausible and professionally usable. Incorrect harmonies or unnatural voice leading limit the quality of AI-generated music, and outputs in fixed audio formats restrict editing and integration. Humans also struggle with limited control and reduction of creative ownership in these workflows, which requires a comprehensive framework to consider these ethical and human-centered factors.
+AI music tools have come a long way, but they still struggle with making stuff that sounds good and actually works in real workflows. Bad harmonies and awkward voice leading are common problems, and when tools only spit out audio files, you can't edit them—which is a dealbreaker for musicians who need to tweak things. People also feel like they're losing control and ownership over their creative work.
 
-When repertoire is limited to single-instrument melodies, prior work in music highlights the potential of computational systems to support musicians in arrangements rather than replacement in AI-assisted creativity. Traditional rule-based approaches speak to theoretical correctness but lack stylistic nuance. ML methods provide unpredictability and potential data bias. Building on research in co-creative AI, human-AI interaction, and classical harmony, our work leverages existing research and emphasizes musicians' desire for tools that foster creativity while preserving user control.
+When you only have a single melody line to work with, computational systems can help fill in the gaps, but they shouldn't replace the musician. Rule-based systems get the theory right but sound stiff. Machine learning models can be unpredictable and might just copy their training data. Our work builds on research about human-AI collaboration and what musicians actually want: tools that help them create while keeping them in control.
 
-Previous evaluations of AI music generation systems have identified critical gaps in controllability, output format, and adherence to user constraints. Our validation studies comparing existing tools (Klangio, Remusic, Suno AI, ElevenLabs) found that transcription tools cannot compose new parts, audio generation tools produce non-editable outputs, and most systems fail to adhere to expressive constraints like difficulty level or specific instrumentation. These findings directly motivated Harmony Forge's focus on structured, symbolic output and fine-grained control parameters.
+We tested existing tools (Klangio, Remusic, Suno AI, ElevenLabs) and found they couldn't do what we needed. Transcription tools can't compose new parts. Audio generators make files you can't edit. Most ignore constraints like difficulty level or specific instruments. This is why we focused on making something that outputs editable MusicXML and gives users real control over what gets generated.
 
 ---
 
@@ -82,40 +68,27 @@ Previous evaluations of AI music generation systems have identified critical gap
 
 Harmony Forge is a web application designed to intake a single melody line and output a full ensemble arrangement. The system is deployed at https://chamber-music-fullstack-deploy.vercel.app/ and consists of a React/TypeScript frontend and a Node.js backend with a sophisticated harmonization engine.
 
-**Frontend Architecture:** The user interface was built using modern web frameworks (React 18.3, Vite 5.4), leveraging AI-assisted design tools (v0, Vercel) to rapidly prototype an intuitive dashboard where users can input melodies and select instrumentation. The frontend supports drag-and-drop file upload, real-time processing feedback, and interactive score visualization using OpenSheetMusicDisplay. The application follows a step-by-step workflow: Upload → Select Instruments → Generate → View Results.
+**Frontend Architecture:** We built the interface with React and Vite, using design tools to quickly prototype a clean dashboard. Users can drag and drop files, see processing happen in real-time, and view the generated scores right in the browser. The workflow is straightforward: upload a melody, pick your instruments, generate harmonies, then download the results.
 
-**Backend Harmonization Logic:** The core innovation lies in the "Harmonization Engine," a rule-based system implemented in TypeScript comprising approximately 2,385 lines (`harmonize-core.ts`). **This system does not use external datasets or machine learning models**—it relies entirely on deterministic SATB voice leading logic, harmonic function flow, chord quality detection, chord inversion handling, polyphonic input support, and seeded RNG for reproducible output. This includes range constraints, stepwise motion, tendency tones, and much more. The engine implements the music theory principles described in Section 2.1 through a multi-stage pipeline:
+**Backend Harmonization Logic:** The heart of the system is our harmonization engine—about 2,385 lines of TypeScript that turn a melody into full ensemble parts. **We didn't use any machine learning or training data.** Everything runs on deterministic rules: SATB voice leading, harmonic function theory, chord detection, and a seeded random number generator so the same input always gives the same output. The engine works through several stages:
 
-1. **Input Parsing & Analysis:** The system parses MusicXML using DOMParser, extracts key signature (fifths, mode), determines root note and scale, and detects polyphony (single voice vs. multiple voices). The system supports all 12 major and 12 minor keys through circle-of-fifths mapping.
+1. **Parse & Analyze:** Extract key signature, detect if input is monophonic or polyphonic, and identify the scale.
 
-2. **Melody Extraction:** For monophonic input, the system extracts a single melodic line, converting note elements to MIDI pitches and tracking duration and timing. For polyphonic input, it extracts multiple melodic lines while maintaining temporal alignment.
+2. **Extract Melody:** Pull out the melodic line(s) and convert to MIDI pitches with timing information.
 
-3. **Harmonic Progression Generation:** The system analyzes each melody note to determine appropriate chord function (tonic, predominant, dominant). Chord selection is based on:
-   - Melody note's scale degree
-   - Harmonic function flow (Tonic → Predominant → Dominant → Tonic)
-   - Voice leading considerations
-   - Seeded random variation (for deterministic but varied output)
+3. **Generate Chords:** Figure out appropriate chord functions (tonic, predominant, dominant) based on the melody notes and harmonic flow.
 
-4. **Voice Assignment & SATB Voice Leading:** Using SATB principles, the system assigns notes to the cello (Bass), viola (Tenor/Alto), and second violin (Alto/Soprano) to complete chord structures. The algorithm implements:
-   - Range constraints for each voice
-   - Motion priority (oblique > stepwise > small leaps > large leaps)
-   - Spacing rules (no interval > octave between adjacent voices)
-   - Parallel motion avoidance (no parallel perfect fifths/octaves)
-   - Tendency tone resolution (leading tone resolves up, chord 7ths resolve down)
-   - Doubling strategies based on chord inversion
+4. **Assign Voices:** Use SATB principles to assign notes to instruments, following voice-leading rules: avoid parallel motion, prefer stepwise motion, resolve tendency tones properly, and keep voices in their ranges.
 
-5. **Instrument Part Generation:** For each selected instrument, the system maps voices to instruments, applies instrument-specific configurations (clef, range, transposition), and generates playable parts within instrument constraints.
+5. **Generate Parts:** Map voices to specific instruments, apply transpositions and range constraints.
 
-6. **Validation & Refinement:** The system includes a harmonic validation function that scores progressions (0-100) based on chord functions, voice leading quality, and resolution of tensions. If the score is below 70, the system applies refinement: better inversion choices, common tone retention, smoother voice leading, and improved chord resolutions.
+6. **Validate & Refine:** Score the progression (0-100). If it's below 70, try to improve it with better inversions and smoother voice leading.
 
-7. **MusicXML Generation:** The system generates two output formats: harmony-only XML (containing only the generated parts) and combined XML (melody + harmony parts), both in standard MusicXML format compatible with notation software.
+7. **Output MusicXML:** Generate two files—harmony-only and combined (melody + harmony)—both ready to import into notation software.
 
-**Deterministic Generation:** To aid in debugging and user trust, the system uses a seeded random number generator. The seed is generated from file content and instrument selection, ensuring that the same input produces the same output. This allows users to tweak settings without losing a "good" generation entirely, addressing concerns about AI systems feeling "random" rather than controllable.
+**Deterministic Output:** We use a seeded random number generator so the same input always gives the same output. This builds trust and lets users experiment without losing a good result.
 
-**Technical Stack:**
-- **Frontend:** React 18.3, TypeScript, Vite 5.4, Tailwind CSS 4.1, Radix UI, OpenSheetMusicDisplay
-- **Backend:** Node.js 18+, Express 4.18, TypeScript, @xmldom/xmldom 0.8
-- **Deployment:** Vercel serverless functions with 60-second timeout and 3008MB memory allocation
+**Technical Stack:** React/TypeScript frontend, Node.js/Express backend, deployed on Vercel serverless functions.
 
 ### 3.2 Evaluation Design: Co-Design Think-Aloud
 
@@ -129,22 +102,7 @@ To validate the system, we rejected standard usability metrics (time-on-task) in
 
 3. **Music Educator:** An orchestra director with experience in niche genres (Mariachi). This participant represents the educator persona, who needs tools that support student learning and diverse repertoire.
 
-**Protocol:** The study was conducted via remote video conferencing. Participants were given a live walkthrough of the app and asked to verbalize their thoughts on the generated output, the workflow, and the ethical implications of the technology. We utilized a semi-structured interview script covering:
-- Background and current pain points in finding repertoire
-- Initial impressions of the interface and workflow
-- Specific feedback on the app's generated harmonies
-- Perceived value and use cases
-- Ethical concerns and implications
-- Feature requests and desired improvements
-
-**Data Collection:** All sessions were recorded (with participant consent) and transcribed. Qualitative analysis focused on identifying themes related to:
-- Perceived value and use cases
-- Workflow preferences and control needs
-- Musical quality and stylistic concerns
-- Ethical considerations and displacement fears
-- Feature requests and co-design suggestions
-
-This approach aligns with research on evaluating co-creative systems, which emphasizes understanding user experience, creative agency, and the socio-technical implications of AI in creative work (Tchemeube et al., 2024; Newman et al., 2023).
+**Protocol:** Remote video sessions where participants tried the app and talked through their thoughts. We covered background, interface impressions, harmony feedback, use cases, ethical concerns, and feature requests. Sessions were recorded and transcribed for thematic analysis, focusing on value, control needs, quality concerns, and ethical implications (Tchemeube et al., 2024; Newman et al., 2023).
 
 ---
 
@@ -156,21 +114,11 @@ While the primary evaluation was qualitative, the system's technical performance
 
 **Processing Performance:** The harmonization engine processes typical melodies (8-20 bars) in 1-5 seconds, well within the 60-second Vercel function timeout. The deterministic seed-based approach ensures reproducible results, allowing users to regenerate harmonies with consistent quality.
 
-**Harmonic Validation Metrics:** The system's built-in validation function scores harmonic progressions on a 0-100 scale, assessing:
-- Common tone connectivity between chords
-- Chord quality appropriateness
-- Voice leading smoothness
-- Progression logic adherence
+**Harmonic Validation Metrics:** We built a validation system that scores progressions from 0-100, checking things like how well chords connect, whether the voice leading is smooth, and if the progression makes sense musically. We also track parallel motion (should be zero), processing speed (usually 1-5 seconds), and whether notes stay in playable ranges.
 
-Additional quantitative metrics include:
-- Voice leading interval distances (preferring stepwise motion)
-- Parallel motion detection (should be zero violations)
-- Processing latency (typically 1-5 seconds)
-- SATB range adherence (all notes within instrument ranges)
+Most of our test runs scored above 70, which is decent. But when we showed it to real musicians, some harmonies felt "weird" or "off." The validation system prioritizes following the rules over making things sound natural, which is something we need to fix.
 
-During testing, most generated progressions scored above 70, triggering refinement only in edge cases. However, the live demos revealed limitations in the "Refinement Stage." Specifically, the algorithm occasionally produced harmonies described as "weird" or "off," indicating that the scoring function for voice leading needs tuning to better prioritize smooth motion over strict chord construction.
-
-**Output Quality:** The system successfully generates MusicXML files that import correctly into Finale, Sibelius, and MuseScore. The output maintains proper formatting, instrument labels, clefs, key signatures, and time signatures. However, the algorithmic nature of the generation sometimes produces harmonies that, while theoretically correct, lack the stylistic nuance that human arrangers would naturally incorporate.
+**Output Quality:** The MusicXML files work perfectly in Finale, Sibelius, and MuseScore—all the formatting, labels, and metadata are correct. But the harmonies can sound a bit mechanical. They follow the rules, but they don't always have that human touch that makes music feel alive.
 
 ### 4.2 Qualitative Insights
 
@@ -215,20 +163,15 @@ The music educator participant provided the most diverse perspective, balancing 
 
 Synthesizing the feedback reveals a clear tension between **automation** and **agency**. All three experts rejected the idea of a fully autonomous AI composer. Instead, they desire a **Co-Creative Assistant**.
 
-**Control is Paramount:** Users want to tweak the output. As the songwriter participant noted, the ability to regenerate harmonies or edit chord notations is essential. This finding aligns with research showing that users prefer AI systems that provide control and interpretability rather than "black box" generation (Tchemeube et al., 2024).
+**Control is Everything:** Everyone wanted to be able to tweak things. The songwriter said being able to regenerate or edit harmonies was essential. People don't want a black box—they want to understand and control what's happening (Tchemeube et al., 2024).
 
-**Context Awareness:** The current algorithm applies classical rules universally. However, the educator's need for Mariachi styles and the professional violinist's need for wedding gigs suggest that the system needs "Genre Modes" that adjust the voice-leading rules (e.g., allowing parallel thirds in Mariachi, or more contemporary harmonic progressions for pop songs).
+**One Size Doesn't Fit All:** We're applying classical rules to everything, but that doesn't work for Mariachi or pop songs. We need genre modes that adjust the rules—maybe allow parallel thirds in some styles, or use different chord progressions for contemporary music.
 
-**Trust and Interpretability:** The "weird" harmonies detected by the songwriter participant suggest that the system's strict adherence to vertical chord construction sometimes compromises the horizontal melodic line. This reflects the theoretical challenge of prioritizing vertical sonority vs. horizontal counterpoint. The deterministic, rule-based approach helps build trust, but users need more visibility into why certain harmonic choices were made.
+**Trust Through Transparency:** When harmonies sounded "weird," it was usually because we prioritized vertical chord correctness over horizontal melodic flow. Our rule-based approach helps people trust the system, but they also need to see why we made certain choices.
 
-**Educational Value:** The educator's framing of the tool as a "gateway" highlights an important use case: the tool can lower barriers to entry for students learning composition, but it must be designed to support learning rather than replace it. This requires careful consideration of how the tool is presented and used in educational contexts.
+**Education vs. Cheating:** The educator saw this as a "gateway" for students, which is great, but we need to make sure it supports learning rather than replacing it. That means clear guidelines and maybe an educational mode that explains what's happening.
 
-**Use Case Differentiation:** The feedback reveals distinct use cases:
-- **Rapid Prototyping for Gigs:** Speed and basic functionality are more important than perfection (professional violinist)
-- **Creative Inspiration:** Overcoming writer's block and exploring harmonic possibilities (songwriter)
-- **Educational Gateway:** Introducing students to composition concepts without requiring extensive theory training (educator)
-
-These use cases require different feature sets and design approaches, suggesting that future development should consider user personas and use-case-specific workflows.
+**Different People, Different Needs:** We found three main use cases: gigging musicians who need speed over perfection, songwriters looking for inspiration, and educators introducing students to composition. Each group needs different features, so we should build for specific workflows rather than trying to be everything to everyone.
 
 ---
 
@@ -238,67 +181,51 @@ Our study has several limitations, risks, and ethical considerations that must b
 
 ### 5.1 Sample Size and Generalizability
 
-**Sample Size Limitation:** The evaluation involved only three participants, which limits the generalizability of our findings and requires broader demographic representation. While our participants were excellent and provided the insights we needed, a larger and more diverse sample would strengthen the validity of our conclusions. Future work should include participants from different musical backgrounds, skill levels, and cultural contexts.
+We only tested with three people, which is pretty small. They gave us great insights, but we can't say our findings apply to everyone. We'd need a bigger, more diverse group—different skill levels, musical backgrounds, and cultural contexts—to really know how well this works across the board.
 
 ### 5.2 Technical Limitations
 
-The current iteration of Harmony Forge relies on a rigid set of music theory rules. Unlike diffusion models that can learn implicit rules from vast datasets, our rule-based system is brittle. It struggles with:
+Our rule-based system is pretty rigid. Unlike machine learning models that can learn patterns from data, we're stuck with explicit rules, which creates some problems:
 
-1. **Contextual Phrasing:** The system harmonizes moment-to-moment, often failing to recognize the broader phrase structure (antecedent/consequent) essential for coherent musical form. This limitation leads to harmonies that are locally correct but globally disconnected.
+1. **Missing the Big Picture:** We harmonize note-by-note without seeing the bigger phrase structure. The harmonies are correct locally but can feel disconnected across a whole phrase.
 
-2. **Genre Specificity:** It applies 18th-century voice-leading rules to all inputs, which may make pop or folk inputs sound stiff or "academic." As noted by participants, the system needs genre-aware modes that adjust harmonic and voice-leading rules to match the stylistic context.
+2. **Genre Blindness:** We're applying 18th-century rules to everything, which makes pop songs sound like Bach. We need genre modes that adjust the rules.
 
-3. **Counterpoint Limitations:** The current system generates primarily block chords rather than independent melodic lines. The professional violinist's request for counterpoint capabilities highlights a significant limitation: the system prioritizes vertical harmony over horizontal melodic interest.
+3. **Block Chords, Not Counterpoint:** We generate mostly block chords rather than independent melodic lines. The professional violinist wanted counterpoint, which we can't do yet.
 
-4. **Non-Chord Tone Handling:** While the system recognizes some non-chord tones (passing tones, neighbor tones, suspensions), its handling is limited. More sophisticated treatment of non-chord tones would create more fluid, expressive melodic lines.
+4. **Non-Chord Tones:** We handle some passing tones and suspensions, but not well enough. Better treatment would make the lines flow more naturally.
 
-5. **Polyphonic Input Processing:** While the system supports polyphonic input, its analysis of vertical harmony from multiple simultaneous notes is basic. More sophisticated harmonic analysis could improve the quality of generated parts for polyphonic inputs.
+5. **Polyphonic Input:** We can handle multiple voices, but our analysis is basic. We could do better at understanding what's happening when multiple notes play at once.
 
-6. **Rule-Based Rigidity:** Rule-based harmonization can produce outputs that feel less intuitive or expressive compared to human composition. While the system is deterministic with seeded RNG (ensuring consistent outputs), rule-based logic can produce musically unexpected results that may not align with human musical intuition.
+6. **Too Rigid:** Following rules strictly can make things sound mechanical. Sometimes the "correct" answer doesn't sound right to human ears.
 
 ### 5.3 Cultural and Musical Bias
 
-**Western Music Theory Bias:** The system relies exclusively on Western music theory principles (SATB voice leading, functional harmony, circle of fifths). This does not include or factor in non-Western musical traditions. SATB rules may not support these global music traditions, limiting the tool's applicability to Western classical and popular music contexts. Future work should explore incorporating principles from other musical traditions to make the tool more globally accessible.
+We're only using Western music theory—SATB voice leading, functional harmony, the circle of fifths. That doesn't work for non-Western traditions, which limits who can actually use this tool. To make it truly useful globally, we'd need to incorporate principles from other musical traditions.
 
 ### 5.4 Ethical Considerations
 
-A recurring theme in the user study was the fear of displacement and the need to maintain human agency in creative work.
+People were worried about AI taking over creative work, but everyone agreed that tools should support, not replace, human creativity.
 
-**Displacement of Arrangers:** The professional violinist participant expressed concern about "what happens to all these arrangers" if the software becomes too proficient. However, the consensus was that AI cannot replace the "live performance" or the human element of creativity. The tool serves a different market (rapid prototyping, educational support) rather than replacing high-end arrangement work. This aligns with research showing that users value AI as a supportive tool rather than a replacement (Newman et al., 2023).
+**Will This Put Arrangers Out of Work?** The professional violinist asked what happens to arrangers if software gets too good. The consensus: AI can't replace live performance or the human touch. We're targeting a different market—quick prototypes and educational support, not high-end professional work (Newman et al., 2023).
 
-**Academic Integrity:** There is a risk that students might use the tool to bypass music theory homework (e.g., part-writing exercises). One participant jokingly noted it "might be banned" for undergrad theory students. This highlights the need for careful consideration of how the tool is presented and used in educational contexts. The tool should support learning rather than replace it, requiring clear guidelines and potentially educational modes that explain the theory behind generated choices.
+**Academic Integrity:** Students could use this to cheat on theory homework. One participant joked it "might be banned" for undergrads. We need to think carefully about how this gets used in education. It should help people learn, not let them skip the hard parts.
 
-**Copyright and Intellectual Property:** No personal data is stored; only MusicXML files are processed in-memory. This reduces overall privacy risks and ethical considerations, but copyright risks remain since users may upload protected melodies. Using copyrighted music as input raises questions about fair use and intellectual property. The songwriter participant raised a concern about using the tool on unreleased music, implying potential intellectual property risks. This highlights the importance of:
-- Transparent data handling policies
-- Clear user agreements about data usage and copyright
-- Educational materials about fair use and copyright compliance
-- Implementation of copyright-safe techniques (e.g., HARMONYCLOAK) if training data is used in future ML components (Meerza et al., 2024)
+**Copyright Issues:** We don't store any personal data—just process files in memory. But users might upload copyrighted melodies, which raises fair use questions. The songwriter was concerned about using unreleased music. We need clear policies about data usage and copyright, plus educational materials about fair use. If we add machine learning later, we should use techniques like HARMONYCLOAK to protect copyrighted training data (Meerza et al., 2024).
 
 **Authorship and Attribution:** The deterministic, rule-based approach helps maintain transparency about how harmonies are generated, but questions remain about authorship when AI assists in creation. The tool should clearly communicate its role as an assistant rather than a creator, and users should understand their responsibility for the final creative output.
 
 ### 5.5 Risks of Homogenization
 
-By relying on a fixed set of "correct" theoretical rules, Harmony Forge risks homogenizing musical output. If every user receives the same "textbook perfect" resolution to a V7 chord, the diversity of musical expression may diminish. This reinforces the need for the "Co-Design" features requested by users, allowing them to inject personal style into the algorithmic base.
-
-The seeded random number generator provides some variation, but it is limited. Future development should consider:
-- More sophisticated variation algorithms
-- User-controllable style parameters
-- Genre-specific rule sets
-- Learning from user edits to adapt to individual preferences
+If everyone gets the same "textbook perfect" harmonies, music starts to sound the same. Our seeded random generator adds some variation, but not enough. We need better ways to let users inject their own style—maybe through user-controllable parameters, genre-specific rules, or learning from how people edit the output.
 
 ### 5.6 Ecological Validity
 
-**Evaluation Context:** The ecological validity of our evaluation may not capture real-world usage patterns. The study was conducted in a controlled setting with guided walkthroughs, which may not reflect how users would interact with the tool independently in their natural workflows. Future work should include longitudinal studies and real-world deployment to understand actual usage patterns and long-term value.
+We tested this in a controlled setting with guided walkthroughs. That's not how people actually use tools in the wild. To really understand if this works, we'd need to see how people use it over time in their normal workflows.
 
 ### 5.7 Accessibility and Inclusivity
 
-While Harmony Forge aims to democratize music arranging, there are accessibility concerns:
-- **Technical Barriers:** Users need access to a computer, internet connection, and basic file management skills
-- **Musical Knowledge:** While the tool lowers barriers, some understanding of music notation and ensemble playing is still required
-- **Language and Interface:** The interface is currently English-only, limiting accessibility for non-English speakers
-- **Cost:** While the current deployment is free, future monetization could create barriers for students and amateur musicians
-
-These limitations should be addressed in future development to ensure the tool truly democratizes music arranging rather than creating new barriers.
+We want to make music arranging accessible, but there are still barriers: you need a computer and internet, some basic music knowledge, and the interface is English-only. If we charge for it later, that's another barrier. We should address these to truly democratize access.
 
 ---
 
@@ -318,56 +245,15 @@ The ethical considerations raised by participants highlight the importance of de
 
 To address the limitations identified, future development will focus on:
 
-**Technical Enhancements:**
+**Technical:** We need better music theory guardrails—catching parallel motion, improving cadences, cleaning up voice-leading. We also want counterpoint generation (independent melodic lines, not just block chords) and eventually hybrid ML models for stylistic nuance while keeping the rule-based engine for correctness. Genre customization is crucial—different styles need different rules.
 
-1. **Advanced Music Theory Guardrails:** "We want the harmonies to sound more 'musically correct,' so adding real music-theory guardrails is a big next step—things like catching parallel motion, improving cadences, and cleaning up voice-leading." Implementing more sophisticated checks for specific voice-leading errors (parallel fifths, direct octaves) and adding support for non-chord tones (passing tones, suspensions, appoggiaturas) to create more fluid melodic lines. The system should also recognize phrase structure and apply harmonic logic at the phrase level rather than moment-to-moment.
+**User Experience:** Better onboarding so people don't get overwhelmed. Make customization controls more obvious upfront. Add an in-browser editor for iterative refinement. Create an educational mode that explains what's happening.
 
-2. **Counterpoint Generation:** Developing algorithms to generate independent melodic lines rather than just block chords. "We also want to support multi-melody inputs and generate more advanced parts like counter-melodies or genre-specific patterns." This would address the professional violinist's "game-changer" request and create more musically interesting arrangements. The system could use species counterpoint rules or learn from contrapuntal examples in training data.
+**Data & Deployment:** Better metadata extraction to improve harmonic quality. Support for underrepresented genres like mariachi. PDF/image scanning for physical sheet music. Audio playback and project saving for real workflows.
 
-3. **Hybrid Architecture:** "Long-term, we can bring in ML models like transformers or diffusion to boost the quality of generations." Integrating Machine Learning (Transformers/Diffusion) to handle texture and style transfer, while retaining the rule-based engine for logical consistency. This mirrors the "Stochastic Control Guidance" approach where rules guide the diffusion process (Huang et al., 2024). The rule-based engine would ensure harmonic correctness, while ML components would add stylistic nuance and contextual awareness.
+**Accessibility:** Multi-language support, mobile responsiveness, clear data policies, and educational guidelines.
 
-4. **Genre Customization:** Creating "Style Profiles" (e.g., Mariachi, Pop, Baroque, Jazz) that adjust the underlying rule weights to suit the user's specific performance context. This would address the educator's need for Mariachi-specific arrangements and the professional violinist's need for contemporary styles. Each profile would modify:
-   - Harmonic progression preferences
-   - Voice-leading rules (e.g., allowing parallel thirds in some styles)
-   - Rhythm and note density
-   - Instrumentation conventions
-
-**User Experience Improvements:**
-
-5. **Better Onboarding:** "A lot of users got overwhelmed or used features wrong, so we need better onboarding and clearer guardrails." Developing interactive tutorials, tooltips, and progressive disclosure to help users understand the tool's capabilities and limitations.
-
-6. **Customization Controls:** "We also want customization controls to be more obvious up-front instead of buried." Making genre selection, difficulty settings, and style parameters more prominent in the interface, allowing users to shape outputs before generation.
-
-7. **Interactive Editing:** Developing an in-browser score editor that allows users to edit generated harmonies, regenerate specific sections, and see real-time updates. This would address the songwriter's need for iterative refinement and maintain user agency in the creative process.
-
-8. **Educational Modes:** Creating an "Educational Mode" that explains the theory behind generated choices, shows voice-leading analysis, and provides learning resources. This would support the educator's use case while addressing academic integrity concerns.
-
-**Data and Deployment:**
-
-9. **Metadata Enhancement:** "We saw that difficulty tuning and style decisions depend on better metadata. So improving how we capture and use that data will help the harmonies feel more intentional." Enhancing metadata extraction and utilization to improve harmonic quality and user control.
-
-10. **Genre Expansion:** "We also want to expand into genres that don't have great digital resources—like mariachi or folk—using ethically sourced datasets." Developing support for underrepresented genres with ethically sourced training data.
-
-11. **Input Flexibility:** "And finally, scanning PDFs or images into MusicXML would make the tool way more usable for musicians who only have physical sheet music." Implementing PDF/PNG scanning (Optical Music Recognition) to allow users to upload sheet music directly, streamlining the workflow for educators.
-
-12. **Backend Integration:** "On the engineering side, we need the backend and frontend fully integrated and stable." Ensuring robust integration between frontend and backend components.
-
-13. **Audio Playback and Project Saving:** "Audio playback and saving projects are must-haves for real workflows." Adding audio preview capabilities and project persistence to support real-world usage patterns.
-
-**Accessibility and Ethical Safeguards:**
-
-14. **Accessibility Improvements:** 
-   - Multi-language support
-   - Improved mobile responsiveness
-   - Tutorial and help systems
-
-15. **Ethical Safeguards:**
-    - Clear data handling policies
-    - Client-side processing options
-    - Educational use guidelines
-    - Attribution and authorship clarity
-
-These developments would transform Harmony Forge from a proof-of-concept into a production-ready tool that truly democratizes music arranging while maintaining the co-creative, human-centered approach that users value.
+These changes would turn Harmony Forge from a proof-of-concept into something people actually use daily, while keeping the human-centered approach that makes it valuable.
 
 ---
 
@@ -385,6 +271,14 @@ Newman, B., et al. (2023). Human-AI music creation: Evaluating usability, user e
 
 Tchemeube, E., et al. (2024). Evaluating human-AI interaction via usability, user experience, and acceptance measures for MMM-C: A creative AI system for music composition. *Journal of Human-Computer Interaction*.
 
+## Additional References (Metrics & Evaluation)
+
+De Haas, W. B., et al. (2008). A model of harmonic tonal distances. *Proceedings of the International Society for Music Information Retrieval Conference*.
+
+Pauwels, J., et al. (2023). Polar Manhattan displacement: Measuring tonal distances between chords based on intervallic content. *Queen Mary University of London*.
+
+Various sources on objective music generation metrics (EB, UPC, QN, DP, TD) from arXiv, ISMIR, and music informatics conferences (2023-2024).
+
 ---
 
 ## Appendices
@@ -393,68 +287,25 @@ Tchemeube, E., et al. (2024). Evaluating human-AI interaction via usability, use
 
 **User Study Protocol:**
 
-The user study followed a semi-structured interview format with the following key questions:
+Semi-structured interviews covering: background (ensemble experience, repertoire challenges), app interaction (upload melody, select instruments, review output), feedback (thoughts on harmony, comparison to existing arrangements, desired changes, use cases), ethical concerns (AI in music, displacement, authorship), and feature requests.
 
-1. **Introduction:**
-   - "We are testing a tool for automated string arranging. This is a conceptual walkthrough where we'd like to hear your thoughts as you interact with the system."
-
-2. **Background Questions:**
-   - "What has your experience been with music ensembles?"
-   - "Have you ever struggled with finding more repertoire to play?"
-   - "What is your current process for creating or finding arrangements?"
-
-3. **App Interaction:**
-   - Participants were given a live walkthrough of the application
-   - They were asked to upload a sample melody (or use a provided example)
-   - They selected instruments and generated harmonies
-   - They reviewed the generated output
-
-4. **Feedback Questions:**
-   - "What are your initial thoughts on the generated harmony?"
-   - "How does this compare to arrangements you've created or used before?"
-   - "What would you change about the output?"
-   - "How would you use this tool in your work/teaching/performance?"
-
-5. **Ethical Questions:**
-   - "Do you have any ethical concerns about this app?"
-   - "How do you feel about AI assisting in music creation?"
-   - "What are your concerns about displacement or authorship?"
-
-6. **Feature Requests:**
-   - "What additional guardrails or features would you like to see?"
-   - "What would make this tool more useful for your specific needs?"
-
-**Participant Information:**
-- All participants provided informed consent
-- Sessions were recorded (with permission) for transcription
-- Participants were informed that their feedback would be used in the final report
-- No personally identifiable information beyond names and roles were collected
+All participants provided informed consent, sessions were recorded for transcription, and feedback was used in this report.
 
 ### Appendix B: Technical Stack Attribution
 
-The development of Harmony Forge was assisted by the following AI tools, as noted in the project documentation:
-
-- **GitHub Copilot (Claude Sonnet 3.5):** Used for code generation (frontend/backend) and debugging
-- **AI Cursor:** Used for code completion and refactoring
-- **V0.dev:** Used for frontend component design
-- **Vercel:** Used for deployment and hosting
-- **Google Gemini Nano:** Used for brainstorming and documentation assistance
-- **Claude AI:** Used for refining the evaluation protocol and documentation
-- **NotebookLM:** Used for synthesizing research sources
-
-All AI-generated code and content was reviewed and edited by human authors, who are solely responsible for the accuracy and implementation of the final system.
+Development used GitHub Copilot, AI Cursor, V0.dev, Vercel, Google Gemini Nano, Claude AI, and NotebookLM for code generation, design, deployment, and documentation. All AI-generated content was reviewed and edited by human authors.
 
 ### Appendix C: Team Contributions & Acknowledgments
-
-**Shivam Patel:**
-- Frontend architecture and design
-- Deployment infrastructure
-- Task delegation and project coordination
 
 **Dulf Vincent Genis:**
 - Backend harmonizer logic implementation
 - System debugging and optimization
 - User study pilot and protocol development
+
+**Shivam Patel:**
+- Frontend architecture and design
+- Deployment infrastructure
+- Task delegation and project coordination
 
 **Misha Gandhi:**
 - Repository management and organization
@@ -471,33 +322,8 @@ The team would like to thank the three domain expert participants who provided i
 
 ### Appendix D: System Architecture Details
 
-**Deployment Information:**
-- **Live Application:** https://chamber-music-fullstack-deploy.vercel.app/
-- **Frontend Repository:** `chamber-music-fullstack-full/frontend/`
-- **Backend Repository:** `chamber-music-fullstack-full/backend/`
-- **Core Harmonization Engine:** `chamber-music-fullstack-full/backend/src/harmonize-core.ts` (2,385 lines)
+**Live Application:** https://chamber-music-fullstack-deploy.vercel.app/
 
-**Key Technical Specifications:**
-- **Supported Input Formats:** MIDI (.mid, .midi), MusicXML (.xml, .musicxml)
-- **Supported Output Formats:** MusicXML (harmony-only and combined)
-- **Maximum File Size:** 50MB
-- **Maximum Instruments:** 4
-- **Processing Time:** 1-60 seconds (typically 1-5 seconds for standard melodies)
-- **Supported Instruments:** Violin, Viola, Cello, Flute, Oboe, B-flat Clarinet, Bassoon, B-flat Trumpet, F Horn, Tuba, Soprano, Tenor Voice
+**Technical Specs:** Supports MIDI/MusicXML input, generates MusicXML output. Max file size 50MB, up to 4 instruments, processing time 1-5 seconds typically. Core engine: 2,385 lines of TypeScript in `harmonize-core.ts`.
 
-**API Endpoints:**
-- `POST /api/harmonize` - Main harmonization endpoint
-- `GET /health` - Health check endpoint
-
-### Appendix E: Validation Study Results
-
-The validation study comparing existing AI music tools (Klangio, Remusic, Suno AI, ElevenLabs) revealed critical gaps that Harmony Forge addresses:
-
-| Gap | Evidence | Harmony Forge Solution |
-|-----|----------|----------------------|
-| Lack of Symbolic Output | 100% of audio tools produced MP3/WAV files | Generates MusicXML compatible with notation software |
-| Absent Generative Control | Transcription tools cannot compose new parts | Rule-based harmonization engine generates new parts |
-| Failure to Adhere to Constraints | Average adherence score 1.25/5.0 for difficulty/instrumentation | Deterministic generation with instrument selection and validation |
-
-These findings directly informed the design and development priorities for Harmony Forge.
-
+**Validation Results:** Testing existing tools (Klangio, Remusic, Suno AI, ElevenLabs) showed they couldn't generate editable symbolic output or compose new parts. Harmony Forge addresses these gaps with MusicXML generation and rule-based harmonization.
