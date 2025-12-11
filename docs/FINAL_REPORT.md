@@ -6,7 +6,7 @@ Dulf Vincent Genis, Shivam Patel, Misha Gandhi, Joanna George
 
 *IS 492 Capstone Project*
 
-*Last Updated: December 10, 2025*
+*Recent Update: December 10, 2025*
 
 ---
 
