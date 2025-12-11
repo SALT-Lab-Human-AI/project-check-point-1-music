@@ -24,13 +24,13 @@ The landscape of musical performance is often divided between the rigid structur
 
 Furthermore, music educators face the challenge of bridging the gap between performance and composition for students. Arranging music requires a deep understanding of voice leading and harmonic function, skills that beginner musicians often lack. This creates an exclusion zone where only those with theoretical training can participate in the creative side of ensemble playing.
 
-The problem extends beyond mere convenience. Research in human-AI co-creation suggests that existing AI music tools often produce "fixed" audio outputs that are "hard to manipulate," preventing users from adjusting individual notes or tracks essential for creating arrangements for specific instruments or skill levels (Fu et al., 2024). Additionally, many systems offer minimal, "1-parameter" interfaces that are insufficient for co-creation, leading users to feel that the generation process is random rather than creative (Tchemeube et al., 2024).
+The problem extends beyond mere convenience. Research in human-AI co-creation suggests that existing AI music tools often produce "fixed" audio outputs that are "hard to manipulate," preventing users from adjusting individual notes or tracks essential for creating arrangements for specific instruments or skill levels (Fu et al., 2025). Additionally, many systems offer minimal, "1-parameter" interfaces that are insufficient for co-creation, leading users to feel that the generation process is random rather than creative (Tchemeube et al., 2025).
 
 ### 1.2 The Harmony Forge Solution
 
 Harmony Forge was developed to address these issues by providing an accessible, web-based tool that automates the generation of accompanying parts. The core value proposition of Harmony Forge is **Creative Efficiency** and **Inclusion**. By automating the tedious aspects of part-writing—such as SATB (Soprano, Alto, Tenor, Bass) voice leading and chord construction—the tool enables musicians to expand their repertoire without the steep learning curve of manual composition.
 
-Unlike diffusion-based generative models that operate as "black boxes," Harmony Forge utilizes a deterministic, rule-based TypeScript engine that prioritizes interpretability and editability. This approach aligns with research on co-creative systems, which emphasizes the importance of maintaining human agency and control in AI-assisted creative workflows (Newman et al., 2023). The system generates MusicXML output, enabling direct integration with standard notation software (Finale, Sibelius, MuseScore), addressing a critical gap identified in validation studies where existing tools failed to produce structured, symbolic outputs suitable for ensemble rehearsal.
+Unlike diffusion-based generative models that operate as "black boxes," Harmony Forge utilizes a deterministic, rule-based TypeScript engine that prioritizes interpretability and editability. This approach aligns with research on co-creative systems, which emphasizes the importance of maintaining human agency and control in AI-assisted creative workflows (Tchemeube et al., 2025). The system generates MusicXML output, enabling direct integration with standard notation software (Finale, Sibelius, MuseScore), addressing a critical gap identified in validation studies where existing tools failed to produce structured, symbolic outputs suitable for ensemble rehearsal.
 
 ### 1.3 Scope of the Report
 
@@ -50,7 +50,7 @@ There's a big difference between rule-based systems like ours and machine learni
 
 ### 2.3 Human-AI Co-Creation in Music
 
-Research shows people want AI tools that help with inspiration and writer's block, but they also need to feel in control and maintain emotional connection to their work (Fu et al., 2024). AI-generated music often lacks "emotional depth" because it's missing the human touch. That's why Harmony Forge is designed as a helper, not a replacement. We handle the tedious stuff (transposition, basic voicing) so musicians can focus on the creative decisions (Newman et al., 2023).
+Research shows people want AI tools that help with inspiration and writer's block, but they also need to feel in control and maintain emotional connection to their work (Fu et al., 2025). AI-generated music often lacks "emotional depth" because it's missing the human touch. That's why Harmony Forge is designed as a helper, not a replacement. We handle the tedious stuff (transposition, basic voicing) so musicians can focus on the creative decisions (Tchemeube et al., 2025).
 
 ### 2.4 Evaluation of AI Music Systems
 
@@ -118,7 +118,7 @@ We conducted user studies with three domain experts—a music educator, a songwr
 
 **Phase 2 - Self-Guided Exploration:** After the live demo, participants received the deployable app link and were encouraged to freely explore the tool on their own time without specific prompts or tasks. We intentionally didn't give them a checklist or structured tasks—just the app and the freedom to use it however they wanted. This unstructured approach lets us see how people actually use the tool when no one's watching, revealing natural workflows and unexpected use cases. The initial walkthrough built trust and familiarity, while the free exploration phase captured authentic feedback about real-world usage patterns. We plan to follow up with participants after they've had time to use the app independently to gather additional insights from their unguided experience.
 
-**Data Collection:** Sessions were recorded and transcribed for thematic analysis, focusing on perceived value, control needs, quality concerns, and ethical implications (Tchemeube et al., 2024; Newman et al., 2023). The two-phase approach captured both immediate reactions during the walkthrough and more considered feedback from independent exploration.
+**Data Collection:** Sessions were recorded and transcribed for thematic analysis, focusing on perceived value, control needs, quality concerns, and ethical implications (Tchemeube et al., 2025). The two-phase approach captured both immediate reactions during the walkthrough and more considered feedback from independent exploration.
 
 ---
 
@@ -160,7 +160,7 @@ The professional violinist participant, whose role in ensembles is described as 
 The songwriter participant, who identifies as a "loyal follower" in ensembles but an active arranger, provided critical feedback on the musical output. This participant described the AI-generated harmonies as creating a "second version" of the song—harmonically functional but distinct from the original composer's intent.
 
 **Key Insights:**
-- This participant valued the tool as a "starting point" to overcome writer's block, aligning with research findings that AI can serve as an inspiration engine (Fu et al., 2024).
+- This participant valued the tool as a "starting point" to overcome writer's block, aligning with research findings that AI can serve as an inspiration engine (Fu et al., 2025).
 - However, this participant noted that the bass lines often lacked the specific character imagined (P2), suggesting the need for more user control over the "style" of the generation.
 - The harmonies sometimes felt "weird" or "off" (P2), indicating that strict adherence to vertical chord construction sometimes compromises the horizontal melodic line.
 
@@ -177,13 +177,13 @@ The music educator participant provided the most diverse perspective, balancing 
 - The tool addresses a real need in niche genres (Mariachi) where arrangements are scarce and manual transcription is time-consuming.
 - This participant emphasized that the tool should handle the "grunt work" (transposition, basic voicing) while leaving creative decisions to the musician (P3).
 
-**Ethical Stance:** This participant emphasized that AI should remain a "supportive role," never having the "final say" (P3). The participant wants the tool to support learning and creativity without replacing the educational value of understanding music theory. This aligns with research on co-creative systems that emphasize maintaining human agency (Newman et al., 2023).
+**Ethical Stance:** This participant emphasized that AI should remain a "supportive role," never having the "final say" (P3). The participant wants the tool to support learning and creativity without replacing the educational value of understanding music theory. This aligns with research on co-creative systems that emphasize maintaining human agency (Tchemeube et al., 2025).
 
 ### 4.3 Discussion: Co-Creative Design Principles
 
 What stands out from talking to these three experts is how consistently they rejected the idea of AI taking over. They didn't want a fully autonomous composer—they wanted a partner. This isn't surprising given what we know about human-AI collaboration, but hearing it directly from people who actually make music for a living makes it real.
 
-The tension between automation and agency came up in different ways for each person, but the core message was the same: give us control, show us what's happening, and let us shape the final product. The songwriter (P2) put it bluntly—being able to regenerate or edit harmonies wasn't optional, it was essential. This aligns with research showing people don't want black boxes; they want to understand and control what's happening (Tchemeube et al., 2024).
+The tension between automation and agency came up in different ways for each person, but the core message was the same: give us control, show us what's happening, and let us shape the final product. The songwriter (P2) put it bluntly—being able to regenerate or edit harmonies wasn't optional, it was essential. This aligns with research showing people don't want black boxes; they want to understand and control what's happening (Tchemeube et al., 2025).
 
 What's interesting is how the need for control showed up differently across use cases. The professional violinist (P1) needed speed for gigs, but still wanted counterpoint capabilities—not just block chords. The educator (P3) wanted a "gateway" for students, but emphasized that AI should never have the "final say." The songwriter (P2) wanted a starting point to overcome writer's block, but needed to be able to refine the output to match their artistic vision. Same underlying need, different expressions.
 
@@ -231,11 +231,11 @@ We're only using Western music theory—SATB voice leading, functional harmony, 
 
 People were worried about AI taking over creative work, but everyone agreed that tools should support, not replace, human creativity.
 
-**Will This Put Arrangers Out of Work?** The professional violinist (P1) asked what happens to arrangers if software gets too good. The consensus: AI can't replace live performance or the human touch. We're targeting a different market—quick prototypes and educational support, not high-end professional work (Newman et al., 2023).
+**Will This Put Arrangers Out of Work?** The professional violinist (P1) asked what happens to arrangers if software gets too good. The consensus: AI can't replace live performance or the human touch. We're targeting a different market—quick prototypes and educational support, not high-end professional work (Tchemeube et al., 2025).
 
 **Academic Integrity:** Students could use this to cheat on theory homework. One participant (P1) joked it "might be banned" for undergrads. We need to think carefully about how this gets used in education. It should help people learn, not let them skip the hard parts.
 
-**Copyright Issues:** We don't store any personal data—just process files in memory. But users might upload copyrighted melodies, which raises fair use questions. The songwriter (P2) was concerned about using unreleased music. We need clear policies about data usage and copyright, plus educational materials about fair use. If we add machine learning later, we should use techniques like HARMONYCLOAK to protect copyrighted training data (Meerza et al., 2024).
+**Copyright Issues:** We don't store any personal data—just process files in memory. But users might upload copyrighted melodies, which raises fair use questions. The songwriter (P2) was concerned about using unreleased music. We need clear policies about data usage and copyright, plus educational materials about fair use. If we add machine learning later, we should use techniques like HARMONYCLOAK to protect copyrighted training data (Meerza et al., 2025).
 
 **Authorship and Attribution:** The deterministic, rule-based approach helps maintain transparency about how harmonies are generated, but questions remain about authorship when AI assists in creation. The tool should clearly communicate its role as an assistant rather than a creator, and users should understand their responsibility for the final creative output.
 
