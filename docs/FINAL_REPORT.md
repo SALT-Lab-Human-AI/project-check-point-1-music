@@ -283,21 +283,19 @@ These changes would turn Harmony Forge from a proof-of-concept into something pe
 
 ## 7. References
 
-De Haas, W. B., Veltkamp, R. C., & Wiering, F. (2008). A model of harmonic tonal distances. In *Proceedings of the 9th International Conference on Music Information Retrieval* (pp. 759–764). ISMIR.
+De Haas, W. B., Veltkamp, R. C., & Wiering, F. (2008). Tonal pitch step distance: A similarity measure for chord progressions. In ISMIR. https://dspace-acc.library.uu.nl/handle/1874/32376
 
-Fu, J., Liu, Y., & Wang, X. (2024). Exploring the collaborative co-creation process with AI: A case study in novice music production. In *Proceedings of the CHI Conference on Human Factors in Computing Systems* (pp. 1–15). ACM. doi.org
+Fu, Y., Newman, M., Going, L., Feng, Q., & Lee, J. H. (2025, July). Exploring the Collaborative Co-Creation Process with AI: A Case Study in Novice Music Production. In Proceedings of the 2025 ACM Designing Interactive Systems Conference (pp. 1298-1312). https://doi.org/10.1145/3715336.3735829
 
-Huang, Y., Yang, Z., Li, Y., & Zhang, W. (2024). Symbolic music generation with non-differentiable rule guided diffusion. In *Proceedings of the 41st International Conference on Machine Learning* (Vol. 235, pp. 12345–12360). PMLR. https://dl.acm.org/doi/10.5555/3692070.3692866
+Huang, Y., Ghatare, A., Liu, Y., Hu, Z., Zhang, Q., Sastry, C. S., ... & Yue, Y. (2024). Symbolic music generation with non-differentiable rule guided diffusion. arXiv preprint arXiv:2402.14285. https://doi.org/10.5555/3692070.3692866
 
-Hutchinson, R. (2017). *Music theory for the 21st-century classroom*. University of Puget Sound. https://musictheory.pugetsound.edu/
+Hutchinson, R. (2017). Music Theory for the 21st-Century Classroom. https://musictheory.pugetsound.edu/
 
-Meerza, S. I. A., Jia, Y., Zhang, J., & Wang, Y. (2024). Harmonycloak: Making music unlearnable for generative AI. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 12345–12355). IEEE.
+Meerza, S. I. A., Sun, L., & Liu, J. (2025, May). Harmonycloak: Making music unlearnable for generative ai. In 2025 IEEE Symposium on Security and Privacy (SP) (pp. 430-448). IEEE. https://doi.org/10.1109/SP61157.2025.00085
 
-Newman, B., Smith, A., & Johnson, C. (2023). Human-AI music creation: Evaluating usability, user experience, and acceptance measures. In *Proceedings of the International Conference on Human-Computer Interaction* (pp. 234–248). Springer.
+Tchemeube, R. B., Ens, J., Plut, C., Pasquier, P., Safi, M., Grabit, Y., & Rolland, J. B. (2025). Evaluating human-AI interaction via usability, user experience and acceptance measures for MMM-c: A creative AI system for music composition. arXiv preprint arXiv:2504.14071. https://arxiv.org/abs/2504.14071
 
-Pauwels, J., De Haas, W. B., & Veltkamp, R. C. (2023). Polar Manhattan displacement: Measuring tonal distances between chords based on intervallic content. *Journal of New Music Research, 52*(3), 234–256.
-
-Tchemeube, E., Williams, K., & Brown, M. (2024). Evaluating human-AI interaction via usability, user experience, and acceptance measures for MMM-C: A creative AI system for music composition. *International Journal of Human-Computer Interaction, 40*(5), 456–472. 
+Miller, J., Pauwels, J., & Sandler, M. (2023). Polar Manhattan Displacement: measuring tonal distances between chords based on intervallic content. https://ismir2023program.ismir.net/poster_294.html
 
 ---
 
